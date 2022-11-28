@@ -1,8 +1,6 @@
-PUF was originally designed to support *all* information and content as described in the various https://peppol.org/library/[Peppol BIS transactions], but with the added advantage of adding support for segments/elements that are not present or allowed in the https://peppol.org/library/[Peppol BIS transactions].
+PUF Clearance Notification is a message type that is applicable to be exchanged in Clearance and CTC markets between Pagero and Issuer of an Invoice. It will inform issuer of the Clearance status of a sent document.
 
-While PUF aim to fully support various Peppol BIS transactions, it will not necessarily be restricted to the same (somewhat restrictive) business rules provided by OpenPeppol.
-
-PUF will, however, always stay compliant to the https://docs.oasis-open.org/ubl/UBL-2.3.html[UBL 2.3] structure.
+PUF Clearance notification is developed to be compliant to the https://docs.oasis-open.org/ubl/UBL-2.3.html[UBL 2.3] structure.
 
 In areas where support for certain information is available in the existing https://docs.oasis-open.org/ubl/UBL-2.3.html[UBL 2.3] structure, PUF implements these elements.
 
