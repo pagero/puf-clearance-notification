@@ -1,4 +1,4 @@
-PUF Clearance Notification is a message type that is applicable to be exchanged in Clearance and CTC markets between Pagero and Issuer of an Invoice. It will inform issuer of the Clearance status of a sent document.
+PUF Clearance Notification is a message type that is applicable to be exchanged in Clearance and CTC markets between Pagero and Issuer of an Invoice. It will inform issuer of the clearance/reporting status (i.e. rejected or accepted) but can also contain clearance artefacts such as QR codes or a signed cleared document.
 
 PUF Clearance notification is developed to be compliant to the https://docs.oasis-open.org/ubl/UBL-2.3.html[UBL 2.3] structure.
 
@@ -6,56 +6,32 @@ In areas where support for certain information is available in the existing http
 
 In other areas where there are no suitable elements in the existing https://docs.oasis-open.org/ubl/UBL-2.3.html[UBL 2.3] schema, PUF implements `ext:UBLExtensions`.
 
-=== How to get started with PUF
+=== How to get started with PUF Clearance Notification
 
-In the following chapters you can see which elements and what type of information that PUF supports. 
+In the following chapters you can see which elements and what type of information that PUF Clearance Notification supports. 
 
-In some cases you will also get longer snippets of code and implementation guidelines in order how to properly provide the data. 
+In some cases you will also get longer snippets of code and implementation guidelines in order how to properly interpret the data. 
 
-There is also a section with <<_examples>> that can be useful when implementing PUF.
+There is also a section with <<_examples>> that can be useful when building support for PUF Clearance Notification in various markets.
 
-If your ERP system already can create/receive documents in https://docs.oasis-open.org/ubl/UBL-2.3.html[UBL 2.3] or if your ERP system can create a UBL based format you can easily use this as stepping stone when moving towards PUF.
+If your ERP system already can receive documents in https://docs.oasis-open.org/ubl/UBL-2.3.html[UBL 2.3] or if your ERP system can interpret a UBL based format you can easily use this as stepping stone when moving towards PUF.
 
-==== Moving from other UBL formats to PUF
-
-1. Download the PUF <<_xml_schemas>>.
-2. Change namespace/s (see chapter <<_namespaces>>).
-3. Verify that your interpretation of the UBL elements mentioned in this specification are the same.
-4. Change the `cbc:CustomizationID` and `cbc:ProfileID` (see chapter <<_customization_and_profile_id>>)
-5. If elements from extensions are needed see chapter <<_working_with_extensions>> for details on how this is implemented.
-6. Before implementing additional elements available in PUF, validate the document with the XSD schema downloaded in step 1 above.
-
-NOTE: In the XML schemas provided in chapter <<_xml_schemas>> you will see the structure and the occurrences of every element available in PUF. +
-This specification will not include any cardinality from a schema perspective nor from what is required in a specific legal domain since this might differ depending on which specific country, region or business requirements you will have to comply with. +
-In order to know what information is sufficient to provide you should first check what the requirements from a legal and business perspective and then refer to this specification on where to provide this information.
 
 === Namespaces
 
-*Target root name space - XYZ:* 
+*Target root name space - ApplicationResponse:* 
 
-- `urn:pagero:PageroUniversalFormat:XYZ:1:0` +
-
-*Example:* +
-_XYZ example for target namespace_
-[source,xml]
-----
-<XYZ xmlns="urn:pagero:PageroUniversalFormat:XYZ:1.0">
-  <!-- Code omitted for clarity -->
-</XYZ>
-----
-
-*CommonAggregateComponents - XYZ:* 
-
-- `urn:pagero:CommonAggregateComponents:1.0`
+- `urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2` +
 
 *Example:* +
-_XYZ example for CommonAggregateComponents namespace_
+_ApplicationResponse example for target namespace_
 [source,xml]
 ----
-<XYZ xmlns:cac="urn:pagero:CommonAggregateComponents:1.0">
+<ApplicationResponse xmlns="urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2">
   <!-- Code omitted for clarity -->
-</XYZ>
+</ApplicationResponse>
 ----
+
 
 === Customization and Profile ID
 
@@ -65,21 +41,21 @@ To indicate the correct PUF specification identifer and the profile identifier, 
 |===
 |Type |Element `cbc:CustomizationID` |Element `cbc:ProfileID`
 
-|*XYZ*
-|XYZ
-|XYZ
+|*Clearance Notification*
+|urn:pagero.com:puf:clearance_notification:1.0
+|urn:pagero.com:puf:clearance_notification:1.0
 |===
 
 *Example of CustomizationID and ProfileID:*
 [source,xml]
 ----
-<cbc:CustomizationID>XYZ</cbc:CustomizationID>
-<cbc:ProfileID>XYZ</cbc:ProfileID>
+<cbc:CustomizationID>urn:pagero.com:puf:clearance_notification:1.0</cbc:CustomizationID>
+<cbc:ProfileID>urn:pagero.com:puf:clearance_notification:1.0</cbc:ProfileID>
 ----
 
 === Working with extensions
 
-This chapter provides an overview on how to use extensions.
+This chapter provides an overview the use of extensions.
 
 In order to facilitate the use of PUF specific extensions, a schema for the extensions is provided.
 
@@ -88,15 +64,15 @@ The `PUF-ExtensionComponent.xsd` can be found together with the other schemas in
 To be able to use the `PUF-ExtensionComponent` a namespace must be included in the document file.
 
 *Example* +
-_Example from XYZ_
+_Example from ApplicationResponse_
 [source,xml]
 ----
-<XYZ ... xmlns:puf="urn:pagero:ExtensionComponent:1.0">
+<ApplicationResponse ... xmlns:puf="urn:pagero:ExtensionComponent:1.0">
   <!-- Code omitted for clarity -->
-</XYZ>
+</ApplicationResponse>
 ----
 
-Depending on in which context the `UBLExtensions` are used there are different options of what types of values you are able to provide.
+Depending on in which context the `UBLExtensions` are used there are different options of what types of values that can be provided.
 
 To identify which context the `UBLExtensions` is in the element ExtensionURI is used. 
 
@@ -107,17 +83,15 @@ When using these Pagero extensions, the URI has the same base:
 After the URI, the specific resource name is added.
 
 *Example* +
-_UBLExtension used in the Party structure._
+_UBLExtension used in the cac:Response structure._
 [source,xml]
 ----
-<cac:AccountingSupplierParty>
-    <cac:Party>
-        <ext:UBLExtensions>
-            <ext:UBLExtension>
-                <ext:ExtensionURI>urn:pagero:ExtensionComponent:1.0:PageroExtension:PartyExtension</ext:ExtensionURI>
-        <!-- Code omitted for clarity -->
-    </cac:Party>
-</cac:AccountingSupplierParty>
+<cac:Response>
+      <ext:UBLExtensions>
+          <ext:UBLExtension>
+              <ext:ExtensionURI>urn:pagero:ExtensionComponent:1.0:PageroExtension:ResponseExtension</ext:ExtensionURI>
+              <!-- Code omitted for clarity -->
+</cac:Response>
 ----
 
 For detailed examples and how to use possible values in each extension please check the chapters where the PUF-specific elements are described.
@@ -125,10 +99,6 @@ For detailed examples and how to use possible values in each extension please ch
 === Release management
 
 PUF will be continuously updated to meet new market demands. 
-
-In order to support backward compatibility, the XSD schema is built with the use of "other" elements. 
-
-The "other" elements in the XSD will prevent validation error for customers who do not frequently keep the XSD schema up-to-date.
 
 ==== Minor release
 

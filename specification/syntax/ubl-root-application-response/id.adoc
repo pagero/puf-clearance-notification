@@ -1,0 +1,18 @@
+|===
+|Path |Description
+
+|`cbc:ID`
+|**Clearance notification identifer** +
+A unique identifier of the clearance notification.
+|===
+
+*Example* +
+_cbc:ID with example value_
+[source,xml]
+----
+<ApplicationResponse>
+  <!-- Code omitted for clarity -->
+  <cbc:ID>51234882</cbc:ID>
+  <!-- Code omitted for clarity -->
+</ApplicationResponse>
+----

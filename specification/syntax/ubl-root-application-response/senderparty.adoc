@@ -1,0 +1,23 @@
+.Elements available in cac:SenderParty
+|===
+|Path |Description
+
+|`cac:PartyName/cbc:Name`
+|**Sender party name** +
+__Clearance authority name__
+|===
+
+*Example* +
+_cac:SenderParty with example values_
+[source,xml]
+----
+<ApplicationResponse>
+  <!-- Code omitted for clarity -->
+  <cac:SenderParty>
+      <cac:PartyName>
+        <cbc:Name>Clearance authority name</cbc:Name>
+      </cac:PartyName>
+  </cac:SenderParty>
+  <!-- Code omitted for clarity -->
+</ApplicationResponse>
+----

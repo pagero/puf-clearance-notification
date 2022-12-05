@@ -1,0 +1,43 @@
+.Elements available in cac:ReceiverParty
+|===
+|Path |Description
+
+|`cbc:EndpointID`
+|**Electronic Identifier** +
+__Receiver’s electronic address__
+
+|`cbc:EndpointID/@schemeID`
+|**Electronic Identifier scheme ID** +
+__Scheme identifier of electronic address.
+According to code list PUF-007-ENDPOINTSCHEME__
+
+|`cac:PartyIdentification/cbc:ID`
+|**Receiver party identifier** +
+__Identifier of the receiver.__
+
+|`cac:PartyIdentification/cbc:ID/@schemeID`
+|**Receiver party identifier scheme id** +
+__Scheme identifier of receiver identifier
+Value according to code list PUF-008-IDENTIFICATIONSCHEME.__
+
+|`cac:PartyLegalEntity/cbc:RegistrationName`
+|**Receiver’s party name** +
+__The name of the party receiving the response.__
+
+|===
+
+*Example* +
+_cac:ReceiverParty with example values_
+[source,xml]
+----
+<ApplicationResponse>
+  <!-- Code omitted for clarity -->
+  <cac:ReceiverParty>
+      <cbc:EndpointID schemeID="0088">7310000000000</EndpointID>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Receiver party name</cbc:Name>
+      </cac:PartyLegalEntity>
+  </cac:ReceiverParty>
+  <!-- Code omitted for clarity -->
+</ApplicationResponse>
+----
