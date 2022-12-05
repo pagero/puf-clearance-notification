@@ -1,4 +1,4 @@
-The chapter describes the `ubl:XYZ` syntax binding and all document content.
+The chapter describes the `ApplicationResponse` syntax binding and all available document content.
 
 [comment]
 --
@@ -8,32 +8,43 @@ NOTE: Document level syntax/content block starts below.
 More "levels" can be added if needed, see e.g. ubl:ApplicationResponse.
 -----------------------------------------------------------------------
 --
+=== cbc:CustomizationID
 
-=== ubl:XYZ (document level)
+include::syntax/ubl-root-application-response/customizationid.adoc[]
 
-Information in this section describe the elements available on document level.
+=== cbc:ProfileID
 
-==== ext:UBLExtensions
+include::syntax/ubl-root-application-response/profileid.adoc[]
 
-include::syntax/ubl-root-xyz/ubl-extensions.adoc[]
+=== cbc:ID
 
-==== cbc:ID
+include::syntax/ubl-root-application-response/id.adoc[]
 
-include::syntax/ubl-root-xyz/id.adoc[]
+=== cbc:IssueDate
 
-[comment]
---
------------------------------------------------------------------------
-NOTE: Line level syntax/content block starts below.
+include::syntax/ubl-root-application-response/issuedate.adoc[]
 
-More "levels" can be added if needed, see e.g. ubl:ApplicationResponse.
------------------------------------------------------------------------
---
+=== cbc:IssueTime
 
-=== cac:XYZ (line level)
+include::syntax/ubl-root-application-response/issuetime.adoc[]
 
-Information in this section describe the elements available on line level.
+=== cbc:Note
 
-==== ext:UBLExtensions
+include::syntax/ubl-root-application-response/note.adoc[]
 
-include::syntax/another-ubl-level-xyz/ubl-extensions.adoc[]
+=== cac:SenderParty
+
+include::syntax/ubl-root-application-response/senderparty.adoc[]
+
+=== cac:ReceiverParty
+
+include::syntax/ubl-root-application-response/receiverparty.adoc[]
+
+=== cac:DocumentResponse/cac:Response
+
+include::syntax/ubl-root-application-response/response.adoc[]
+
+=== cac:DocumentResponse/cac:DocumentReference
+
+include::syntax/ubl-root-application-response/document-reference.adoc[]
+

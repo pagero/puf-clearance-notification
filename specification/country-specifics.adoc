@@ -23,23 +23,14 @@ NOTE: The "Require ext:UBLExtensions"-column indicates whether or not the use of
 |===
 |Country |Supported by PUF |Require ext:UBLExtensions |Comment
 
-|XYZ
+|Saudi Arabia
 |*Yes*
-|*No*
-|XYZ
+|*Yes*
+|
 
-|...
-|...
-|...
-|...
+|India
+|*Yes*
+|*Yes*
+|
 
 |===
-
-=== Country X
-
-include::country-specifics/country-x.adoc[]
-
-=== Country Y
-
-
-include::country-specifics/country-y.adoc[]
