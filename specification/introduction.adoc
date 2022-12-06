@@ -6,14 +6,14 @@ To align with new regulation and business needs throughout the world, the core i
 
 Based on extensive analysis, PUF has been designed to meet various country-, industry-, format- and/or system-specific requirements.
 
-Another core idea of PUF is to create a flexible, extendable business document specifications which can be updated quickly to be able to meet the requirements of the fast-changing global electronic document landscape.
+Another core idea of PUF is to create flexible, extendable business document specifications which can be updated quickly to be able to meet the requirements of the fast-changing global electronic document landscape.
 
 
 PUF will to a large extent try to follow and align with the work done in https://peppol.org/[OpenPeppol] and other UBL based specifications. 
 
 
-=== Response messsages in general
-When issuing an electronic document (e.g. electronic invoice) there might be a need to inform about the process of the document. This can include information about the transport of a message, status regarding clearance or status of an invoice in the buyer's approval or rejection etc. 
+=== Response messages in general
+When issuing an electronic document (e.g. electronic invoice) there might be a need to inform about the process status of a certain document. This can include information about the transport of a message, status regarding clearance/reporting or status of an invoice in the buyer's approval or rejection etc. 
 Depending on which legal domain the issuer of an invoice operates in the need for different response messages might differ. The response message types that is available for use in Pagero Online within PUF
 are, Technical Acknowledgement, Clearance Notification and Invoice Response. 
 
