@@ -50,10 +50,6 @@ include::specification/codelists.adoc[]
 
 include::specification/xml-schemas.adoc[]
 
-== Validation
-
-include::specification/validation.adoc[]
-
 == Examples
 
 include::specification/examples.adoc[]

@@ -32,7 +32,9 @@ cbc:EmbeddedDocumentBinaryObject/@filename`
 
 |`puf:AdditionalDocumentReference/cac:Attachment/ + 
 cbc:EmbeddedDocumentBinaryObject/@mimeCode`
-|Mimecode of the document.
+|Mimecode of the attached document. + 
+Supported mime codes can be found in the code list +
+<<_puf_006_mimecodes>>
 
 |`puf:AdditionalDocumentReference/cac:Attachment/ + 
 cbc:EmbeddedDocumentBinaryObject`
