@@ -72,7 +72,7 @@ __
                 <cbc:DocumentTypeCode>M</cbc:DocumentTypeCode>
                 <cbc:DocumentDescription>LCD</cbc:DocumentDescription>
                 <cac:Attachment>
-                  cbc:EmbeddedDocumentBinaryObject filename="123456789_12345.xml" mimeCode="application/xml">U29tZSBkb2N1bWVudA==</cbc:EmbeddedDocumentBinaryObject>
+                  <cbc:EmbeddedDocumentBinaryObject filename="123456789_12345.xml" mimeCode="application/xml">U29tZSBkb2N1bWVudA==</cbc:EmbeddedDocumentBinaryObject>
                 </cac:Attachment>
               </puf:AdditionalDocumentReference>
           </ext:ExtensionContent>

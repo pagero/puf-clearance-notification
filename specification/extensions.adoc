@@ -1,6 +1,6 @@
 === Response Extension
 
-Below chapters describe the elements added in cac:DocumentResponse/cac:Response/ext:UBLExtensions.
+Below chapters describe the elements added in `cac:DocumentResponse/cac:Response/ext:UBLExtensions`.
 
 include::extensions/ubl-root-application-response/response-extension.adoc[]
 
