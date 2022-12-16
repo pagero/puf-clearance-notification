@@ -3,7 +3,7 @@
 
 |`cbc:Note`
 |**Note** +
-Free text, the element can be iterated multiple times.
+Free text, can be repeated multiple times.
 |===
 
 *Example* +

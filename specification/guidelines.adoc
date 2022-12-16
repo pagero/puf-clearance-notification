@@ -1,8 +1,10 @@
-PUF Clearance Notification is a message type that is applicable to be exchanged in Clearance and CTC markets between Pagero and Issuer of an Invoice. It will inform issuer of the clearance/reporting status (i.e. rejected or accepted) but can also contain clearance artefacts such as QR codes or a signed cleared document.
+PUF Clearance Notification is a document type that is applicable to be exchanged in clearance and CTC markets between Pagero and the issuer of an invoice. 
 
-PUF Clearance notification is developed to be compliant to the https://docs.oasis-open.org/ubl/UBL-2.3.html[UBL 2.3] structure.
+It will inform the issuer of the clearance/reporting status (i.e. rejected or accepted) but can also contain clearance artefacts such as QR codes or a signed cleared document.
 
-In areas where support for certain information is available in the existing https://docs.oasis-open.org/ubl/UBL-2.3.html[UBL 2.3] structure, PUF implements these elements.
+PUF Clearance Notification is developed to be compliant to the https://docs.oasis-open.org/ubl/UBL-2.3.html[UBL 2.3] schema.
+
+In areas where support for certain information is available in the existing https://docs.oasis-open.org/ubl/UBL-2.3.html[UBL 2.3] schema, PUF implements these elements.
 
 In other areas where there are no suitable elements in the existing https://docs.oasis-open.org/ubl/UBL-2.3.html[UBL 2.3] schema, PUF implements `ext:UBLExtensions`.
 
@@ -10,18 +12,17 @@ In other areas where there are no suitable elements in the existing https://docs
 
 In the following chapters you can see which elements and what type of information that PUF Clearance Notification supports. 
 
-In some cases you will also get longer snippets of code and implementation guidelines in order how to properly interpret the data. 
+In some cases we provide longer snippets of code and implementation guidelines describing how to properly interpret the data. 
 
 There is also a section with <<_examples>> that can be useful when building support for PUF Clearance Notification in various markets.
 
-If your ERP system already can receive documents in https://docs.oasis-open.org/ubl/UBL-2.3.html[UBL 2.3] or if your ERP system can interpret a UBL based format you can easily use this as stepping stone when moving towards PUF.
-
+If your ERP system already can receive documents in https://docs.oasis-open.org/ubl/UBL-2.3.html[UBL 2.3] or if your ERP system can interpret another UBL 2.3 based format you can easily use this as stepping stone when moving towards PUF.
 
 === Namespaces
 
 *Target root name space - ApplicationResponse:* 
 
-- `urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2` +
+- `urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2`
 
 *Example:* +
 _ApplicationResponse example for target namespace_
@@ -46,7 +47,7 @@ To indicate the correct PUF specification identifer and the profile identifier, 
 |urn:pagero.com:puf:clearance_notification:1.0
 |===
 
-*Example of CustomizationID and ProfileID:*
+*Example*
 [source,xml]
 ----
 <cbc:CustomizationID>urn:pagero.com:puf:clearance_notification:1.0</cbc:CustomizationID>
@@ -57,11 +58,11 @@ To indicate the correct PUF specification identifer and the profile identifier, 
 
 This chapter provides an overview the use of extensions.
 
-In order to facilitate the use of PUF specific extensions, a schema for the extensions is provided.
+In order to facilitate the use of PUF specific extensions, an additional XML schema is provided.
 
 The `PUF-ExtensionComponent.xsd` can be found together with the other schemas in chapter <<_xml_schemas>>. 
 
-To be able to use the `PUF-ExtensionComponent` a namespace must be included in the document file.
+To be able to use the `PUF-ExtensionComponent`, its namespace must be included in the document file.
 
 *Example* +
 _Example from ApplicationResponse_
@@ -72,15 +73,15 @@ _Example from ApplicationResponse_
 </ApplicationResponse>
 ----
 
-Depending on in which context the `UBLExtensions` are used there are different options of what types of values that can be provided.
+Depending on in which context the `UBLExtensions` are used, there are different options for what types of values that can be provided.
 
-To identify which context the `UBLExtensions` is in the element ExtensionURI is used. 
+To identify which context the `UBLExtensions` is in, the element `ExtensionURI` is used. 
 
-When using these Pagero extensions, the URI has the same base:
+When using these Pagero extensions, the URI always has the same base:
 
 - `urn:pagero:ExtensionComponent:1.0:PageroExtension`
 
-After the URI, the specific resource name is added.
+After this URI, the specific resource name is added.
 
 *Example* +
 _UBLExtension used in the cac:Response structure._
@@ -94,11 +95,11 @@ _UBLExtension used in the cac:Response structure._
 </cac:Response>
 ----
 
-For detailed examples and how to use possible values in each extension please check the chapters where the PUF-specific elements are described.
+For detailed examples and how to use possible values in each extension please see the chapters where PUF-specific elements are described.
 
 === Release management
 
-PUF will be continuously updated to meet new market demands. 
+PUF will be continuously updated to meet new market demands.
 
 ==== Minor release
 
@@ -106,14 +107,14 @@ A minor release will always be backward compatible and will take place without p
 
 Minor releases may include bugfixes, new elements, schematron updates and other features. 
 
-These releases can be followed on https://github.com/pagero/puf[GitHub].
+To be automatically notified of all releases, please "Watch" the project repository on https://github.com/pagero/puf-clearance-notification[GitHub].
 
 ==== Major release
 
 A major release may include changes that are not backward compatible. 
 
-Such a release will be notified at least three months prior to date of implementation, to users who registered an account on Pagero validex or on https://github.com/pagero/puf[GitHub].
+Such a release will be notified at least three months prior to date of implementation, to users who registered an account on Pagero validex or on https://github.com/pagero/puf-clearance-notification[GitHub].
 
 To register for PUF major release notification you can create a free account on https://pagero.validex.net[Pagero Validex]. 
 
-But we urge all interested parties to follow the project on https://github.com/pagero/puf[GitHub] where all releases will be notified.
+But we strongly urge all interested parties to "Watch" the project repository on https://github.com/pagero/puf-clearance-notification[GitHub] where all releases will trigger automatic notifications.

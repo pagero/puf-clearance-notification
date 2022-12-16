@@ -4,25 +4,25 @@
 
 |`cbc:EndpointID`
 |**Electronic Identifier** +
-__Receiver’s electronic address__
+Receiver’s electronic address.
 
 |`cbc:EndpointID/@schemeID`
 |**Electronic Identifier scheme ID** +
-__Scheme identifier of electronic address.
-According to code list PUF-007-ENDPOINTSCHEME__
+Scheme identifier of electronic address. +
+_According to code list <<_puf_007_endpointscheme>>_
 
 |`cac:PartyIdentification/cbc:ID`
 |**Receiver party identifier** +
-__Identifier of the receiver.__
+Identifier of the receiver.
 
 |`cac:PartyIdentification/cbc:ID/@schemeID`
 |**Receiver party identifier scheme id** +
-__Scheme identifier of receiver identifier
-Value according to code list PUF-008-IDENTIFICATIONSCHEME.__
+Scheme identifier of receiver identifier. +
+_Value according to code list <<_puf_008_identificationscheme>>._
 
 |`cac:PartyLegalEntity/cbc:RegistrationName`
 |**Receiver’s party name** +
-__The name of the party receiving the response.__
+The name of the party receiving the response.
 
 |===
 

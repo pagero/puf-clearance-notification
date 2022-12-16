@@ -14,10 +14,11 @@ Lastly, in some cases, *all* the values are defined solely for PUF.
 |Business Term |Path |listID
 
 |Mime code
-|`cac:DocumentResponse/cac:Response/ext:UBLExtensions/ext:UBLExtension + 
-[ext:ExtensionURI='urn:pagero:ExtensionComponent:1.0:PageroExtension:ResponseExtension']/ + 
-ext:ExtensionContent/puf:PageroExtension/puf:ResponseExtension/ + 
-puf:AdditionalDocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject/@mimeCode`
+|`cac:DocumentResponse/cac:Response/ext:UBLExtensions/ext:UBLExtension` + 
+`[ext:ExtensionURI='urn:pagero:ExtensionComponent:1.0:PageroExtension` +
+`:ResponseExtension']/ext:ExtensionContent/puf:PageroExtension/` +
+`puf:ResponseExtension/puf:AdditionalDocumentReference/` +
+`cac:Attachment/cbc:EmbeddedDocumentBinaryObject/@mimeCode`
 |<<_puf_006_mimecodes>>
 
 |Electronic address scheme
@@ -36,33 +37,33 @@ puf:AdditionalDocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject/
 
 ==== PUF-006-MIMECODES
 
-List of available mime codes.
+List of available MIME codes.
 
 |===
-|Value
+|Value | Description
 
-|`text/csv`
+|`text/csv` | Comma separated value file
 
-|`application/pdf`
+|`application/pdf` | PDF document
 
-|`image/jpeg`
+|`image/jpeg` | JPEG image
 
-|`application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
+|`application/vnd.openxmlformats-officedocument.spreadsheetml.sheet` | Spreadsheet document
 
-|`application/vnd.oasis.opendocument.spreadsheet`
+|`application/vnd.oasis.opendocument.spreadsheet` | Spreadsheet docuement
 
 |===
 
 ==== PUF-007-ENDPOINTSCHEME
 
-For available values see code list https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/[Electronic address scheme]
+For available values see OpenPeppol's code list https://docs.peppol.eu/poacc/billing/3.0/codelist/eas/[Electronic Address Scheme (EAS)].
 
 ==== PUF-008-IDENTIFICATIONSCHEME
 
-Supported values can be found here https://docs.peppol.eu/poacc/billing/3.0/codelist/ICD/[ISO 6523 ICD list].
+Supported values can be found in OpenPeppol's code list https://docs.peppol.eu/poacc/billing/3.0/codelist/ICD/[ISO 6523 ICD list].
 
 For `cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID` and
-`cac:PayeeParty/cac:PartyIdentification/cbc:ID/@schemeID` an additional code list is also applicable: https://docs.peppol.eu/poacc/billing/3.0/codelist/SEPA/[Sepa indicator].
+`cac:PayeeParty/cac:PartyIdentification/cbc:ID/@schemeID` an additional code list is also applicable: https://docs.peppol.eu/poacc/billing/3.0/codelist/SEPA/[SEPA indicator].
 
 For additional identification scheme identifier added in PUF see below recommendations.
 
@@ -114,7 +115,7 @@ For additional identification scheme identifier added in PUF see below recommend
 |Value |Description
 
 |`IN:PAN`
-|PAN is a 10-digit unique identification alpha-numeric number
+|PAN is a 10-digit unique identification alpha-numeric number.
 
 |`IN:GSTIN`
 |GSTIN is a 15-digit PAN-based unique identification number assigned to every registered person under GST.

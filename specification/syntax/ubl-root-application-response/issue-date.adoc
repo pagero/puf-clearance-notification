@@ -1,17 +1,18 @@
 |===
 |Path |Description
 
-|`cbc:IssueTime`
-|**The time at which the transaction instance was issued.** +
-__Format "HH:mm:ss""__
+|`cbc:IssueDate`
+|**Issue date of clearance notification** +
+_Format must be "YYYY-MM-DD"._
 |===
+
 *Example* +
-_cbc:IssueTime with example value_
+_cbc:IssueDate with example value_
 [source,xml]
 ----
 <ApplicationResponse>
   <!-- Code omitted for clarity -->
-  <cbc:IssueTime>21:32:52</cbc:IssueTime>
+  <cbc:IssueDate>2021-01-30</cbc:IssueDate>
   <!-- Code omitted for clarity -->
 </ApplicationResponse>
 ----

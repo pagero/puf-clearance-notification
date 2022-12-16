@@ -4,22 +4,21 @@
 
 |`cbc:ID`
 |**Invoice identifier** +
-__Reference to the invoice (invoice number)__
-
+Reference to the invoice (invoice number).
 
 |`cbc:IssueDate`
 |**Invoice issue date** +
-__The date on which the referenced invoice was issued. Format "YYYY-MM-DD"__
+The date on which the referenced invoice was issued. +
+_Format must be "YYYY-MM-DD"._
 
 |`cbc:DocumentTypeCode`
 |**Document type code** +
-__Type code of the referenced invoice (e.g. 380=Invoice, 381 Credit note etc.)__
+Type code of the referenced invoice (e.g. 380=Invoice, 381 Credit note etc.).
 
 |===
 
-
 *Example* +
-__cac:DocumentReference with example values__
+_cac:DocumentReference with example values_
 
 [source,xml]
 ----

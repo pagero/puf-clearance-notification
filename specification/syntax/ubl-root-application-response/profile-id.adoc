@@ -4,8 +4,9 @@
 |`cbc:ProfileID`
 |**Business process type** +
 Identifies the business process. +
-__'urn:pagero.com:puf:clearance_notification:1.0'__
+_Must be value 'urn:pagero.com:puf:clearance_notification:1.0'._
 |===
+
 *Example* +
 _cbc:ProfileID populated with correct value_
 [source,xml]

@@ -4,27 +4,24 @@
 
 |`ext:UBLExtensions`
 |**Extension Content** +
-__Extension is added to provide additional information in the `cac:InvoiceLine` element, added elements in regards to `ext:UBLExtensions` for `cac:InvoiceLine` can be found below:__ +
-
+Extension is added to provide additional information in the `cac:InvoiceLine` element, added elements in regards to `ext:UBLExtensions` for `cac:InvoiceLine` can be found below: +
 <<_response_extension>>
 
 |`cbc:ResponseCode`
 |**Clearance/reporting response codes** +
-__**APPROVED** = Approved by Clearance Authority +
-**APPROVED_WITH_WARNINGS** = Approved by Clearance Authority with warnings + 
-**REJECTED** = Rejected by Clearance Authority.__ 
+**APPROVED** = Approved by clearance authority +
+**APPROVED_WITH_WARNINGS** = Approved by clearance authority with warnings + 
+**REJECTED** = Rejected by clearance authority
 
 |`cac:Status/cbc:StatusReasonCode`
 |**Status reason code** +
-__A code defining a clarification given for the clearance notification status__ 
+A code defining a clarification given for the clearance notification status.
 
 |`cac:Status/cbc:StatusReason`
 |**Status reason text** +
-__The description of the clarification given for the notification status.__ 
-
+The description of the clarification given for the notification status.
 
 |===
-
 
 *Example* +
 _cac:Response with example values_

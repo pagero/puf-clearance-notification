@@ -1,4 +1,4 @@
-:doctitle: image:images/puf-logo.png[float="center", width=100%] Pagero Universal Format - Clearance Notification
+:doctitle: image:images/puf-logo.png[float="center", width=100%] PUF Clearance Notification 1.0
 :author: Copyright &copy; 2022, Pagero Group
 :email: https://pagero.com
 :copyright: Pagero Group
@@ -36,7 +36,11 @@ include::specification/syntax.adoc[]
 
 == Extensions
 
+:sectnums!:
+
 include::specification/extensions.adoc[]
+
+:sectnums:
 
 == Country specifics
 

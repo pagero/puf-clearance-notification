@@ -4,7 +4,7 @@
 
 |`cac:PartyName/cbc:Name`
 |**Sender party name** +
-__Clearance authority name__
+Clearance authority name.
 |===
 
 *Example* +
