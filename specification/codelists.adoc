@@ -24,14 +24,13 @@ Lastly, in some cases, *all* the values are defined solely for PUF.
 |Electronic address scheme
 |`cac:AccountingSupplierParty/cac:Party/cbc:EndpointID/@schemeID` +
 `cac:AccountingCustomerParty/cac:Party/cbc:EndpointID/@schemeID` +
-`cac:BuyerCustomerParty/cac:Party/cbc:EndpointID/@schemeID`
 |<<_puf_007_endpointscheme>>
 
 |Identification scheme
-|`cac:PartyIdentification/cbc:ID/@schemeID` +
-`cac:PartyLegalEntity/cbc:CompanyID/@schemeID` +
-`cac:Delivery/cac:DeliveryLocation/cbc:ID/@schemeID` +
-`cac:Item/cac:StandardItemIdentification/cbc:ID/@schemeID`
+|`cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/ +
+cbc:ID/@schemeID` +
+`cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/ +
+cbc:CompanyID/@schemeID` +
 |<<_puf_008_identificationscheme>>
 |===
 
