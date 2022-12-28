@@ -595,6 +595,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#_puf_006_mimecodes">6.1.1. PUF-006-MIMECODES</a></li>
 <li><a href="#_puf_007_endpointscheme">6.1.2. PUF-007-ENDPOINTSCHEME</a></li>
 <li><a href="#_puf_008_identificationscheme">6.1.3. PUF-008-IDENTIFICATIONSCHEME</a></li>
+<li><a href="#_puf_017_clearancestatuscode">6.1.4. PUF-017-CLEARANCESTATUSCODE</a></li>
 </ul>
 </li>
 </ul>
@@ -1289,9 +1290,8 @@ Extension is added to provide additional information in the <code>cac:Response</
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>cbc:ResponseCode</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Clearance/reporting response codes</strong><br>
-<strong>APPROVED</strong> = Approved by clearance authority<br>
-<strong>APPROVED_WITH_WARNINGS</strong> = Approved by clearance authority with warnings<br>
-<strong>REJECTED</strong> = Rejected by clearance authority</p></td>
+<em>Value according to code list<br>
+<a href="#_puf_017_clearancestatuscode">PUF-017-CLEARANCESTATUSCODE</a>.</em></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>cac:Status/cbc:StatusReasonCode</code></p></td>
@@ -1814,6 +1814,38 @@ cbc:CompanyID/@schemeID</code><br></p></td>
 </tbody>
 </table>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_puf_017_clearancestatuscode"><a class="anchor" href="#_puf_017_clearancestatuscode"></a><a class="link" href="#_puf_017_clearancestatuscode">6.1.4. PUF-017-CLEARANCESTATUSCODE</a></h4>
+<div class="paragraph">
+<p>Available clearance/reporting status codes</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Value</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>APPROVED</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Approved by clearance authority.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>APPROVED_WITH_WARNINGS</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Approved by clearance authority with warnings.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>REJECTED</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rejected by clearance authority.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>

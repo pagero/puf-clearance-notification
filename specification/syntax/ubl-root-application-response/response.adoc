@@ -9,9 +9,8 @@ Extension is added to provide additional information in the `cac:Response` eleme
 
 |`cbc:ResponseCode`
 |**Clearance/reporting response codes** +
-**APPROVED** = Approved by clearance authority +
-**APPROVED_WITH_WARNINGS** = Approved by clearance authority with warnings + 
-**REJECTED** = Rejected by clearance authority
+_Value according to code list +
+<<_puf_017_clearancestatuscode>>._
 
 |`cac:Status/cbc:StatusReasonCode`
 |**Status reason code** +

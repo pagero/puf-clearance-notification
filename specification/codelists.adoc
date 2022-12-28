@@ -123,3 +123,21 @@ For additional identification scheme identifier added in PUF see below recommend
 |Corporate Identification Number (CIN) is a 21 digits alpha-numeric unique identification number that is assigned by the Registrar of Companies (ROC).
 
 |===
+
+==== PUF-017-CLEARANCESTATUSCODE
+
+Available clearance/reporting status codes
+
+|===
+|Value |Description
+
+|`APPROVED`
+|Approved by clearance authority.
+
+|`APPROVED_WITH_WARNINGS`
+|Approved by clearance authority with warnings.
+
+|`REJECTED`
+|Rejected by clearance authority.
+
+|===
