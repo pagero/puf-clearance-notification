@@ -9,7 +9,7 @@ Receiver’s electronic address.
 |`cbc:EndpointID/@schemeID`
 |**Electronic Identifier scheme ID** +
 Scheme identifier of electronic address. +
-_According to code list <<_puf_007_endpointscheme>>_
+_According to code list <<_puf_007_endpointscheme>>._
 
 |`cac:PartyIdentification/cbc:ID`
 |**Receiver party identifier** +

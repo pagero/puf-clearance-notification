@@ -4,13 +4,12 @@
 
 |`ext:UBLExtensions`
 |**Extension Content** +
-Extension is added to provide additional information in the `cac:Response` element, added elements in regards to `ext:UBLExtensions` for `cac:Response` can be found below: +
-<<_response_extension>>
+Extension is added to provide additional information in the `cac:Response` element. + 
+Added elements in regards to `ext:UBLExtensions` for `cac:Response` can be found here: <<_response_extension>>.
 
 |`cbc:ResponseCode`
 |**Clearance/reporting response codes** +
-_Value according to code list +
-<<_puf_017_clearancestatuscode>>._
+_Value according to code list <<_puf_017_clearancestatuscode>>._
 
 |`cac:Status/cbc:StatusReasonCode`
 |**Status reason code** +
