@@ -32,6 +32,10 @@ cbc:ID/@schemeID` +
 `cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/ +
 cbc:CompanyID/@schemeID` +
 |<<_puf_008_identificationscheme>>
+
+|Clearance/reporting response codes 
+|`cac:DocumentResponse/cac:Response/cbc:ResponseCode`
+|<<_puf_017_clearancestatuscode>>
 |===
 
 ==== PUF-006-MIMECODES
