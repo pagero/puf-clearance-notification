@@ -2,9 +2,9 @@ This section will provide information regarding on how to include common country
 
 The aim for PUF is to cover business requirements in legal domains and countries all over the world.
 
-The below list should be seen as an overview to visualize where PUF currently is considered applicable. 
+The below list should be seen as an overview to visualize where PUF currently is considered applicable.
 
-If the country is marked as supported means that an analysis of country or regional requirements has been made. 
+If the country is marked as supported means that an analysis of country or regional requirements has been made.
 
 *It does not*, however, automatically mean that all conceivable content requirements are supported within PUF.
 
@@ -29,6 +29,11 @@ NOTE: The "Require ext:UBLExtensions?"-column indicates whether or not the use o
 |-
 
 |India
+|*Yes*
+|*Yes*
+|-
+
+|Serbia
 |*Yes*
 |*Yes*
 |-
