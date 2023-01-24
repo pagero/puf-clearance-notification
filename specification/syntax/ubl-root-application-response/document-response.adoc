@@ -9,7 +9,8 @@ Added elements in regards to `ext:UBLExtensions` for `cac:Response` can be found
 
 |`cbc:ResponseCode`
 |**Clearance/reporting response codes** +
-_Value according to code list <<_puf_017_clearancestatuscode>>._
+_Value according to code list + 
+https://pagero.github.io/puf-code-lists/#_puf_017_clearancestatuscode[PUF-017-CLEARANCESTATUSCODE^]._
 
 |`cac:Status/cbc:StatusReasonCode`
 |**Status reason code** +
