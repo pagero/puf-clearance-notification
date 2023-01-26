@@ -1,4 +1,4 @@
-PUF Clearance Notification is a document type that is applicable to be exchanged in clearance and CTC markets between Pagero and the issuer of an invoice. 
+PUF Clearance Notification is a document type that is applicable to be exchanged in clearance and CTC markets between Pagero and the issuer of a document. 
 
 It will inform the issuer of the clearance/reporting status (i.e. rejected or accepted) but can also contain clearance artefacts such as QR codes or a signed cleared document.
 

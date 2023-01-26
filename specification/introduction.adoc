@@ -16,11 +16,11 @@ PUF will to a large extent try to follow and align with the work done in https:/
 
 NOTE: This specification concerns the *Clearance Notification* response message type.
 
-When issuing an electronic document (e.g. electronic invoice) there might be a need to inform about the process status of that document duing its lifecycle.
+When issuing an electronic document (e.g. electronic invoice or other document type) there might be a need to inform about the process status of that document duing its lifecycle.
 
-This can include information about the transport of a message, status regarding clearance/reporting or status of an invoice in the buyer's approval or rejection etc.
+This can include information about the transport of a message, status regarding clearance/reporting of a message or status of a message concerning the recipients approval or rejection etc.
 
-Depending on which legal domain the document issuer operates in, the need for various response messages might differ.
+Depending on which legal domain the document issuer operates in, the document types involved and the need for various response messages might differ.
 
 The response message types available in the PUF suite for use in https://www.pageroonline.com[Pagero Online, window=_blank] are:
 
@@ -28,14 +28,15 @@ The response message types available in the PUF suite for use in https://www.pag
 - https://pagero.github.io/puf-clearance-notification[Clearance Notification^]
 - https://pagero.github.io/puf-invoice-response[Invoice Response^]
 
-To illustrate the flow of the various response messages:
 
-_Example: Flow of different reponse messages_
+_Example: A possible orchestation of messages supporting a market where invoices are required to be reported to a clearance authority and where a buyer has the possibility to send an invoice response._
+
 image:images/response-messages-overview.JPG[float="center", width=100%]
 
 ==== Technical Acknowledgement
 
-This type of response message is mainly used to inform a sender about the transport of a document from point A to B. 
+This type of response message is mainly used to inform a sender about the transport of a document from + 
+point A to B. 
 
 In addition, in Pagero Online the use of technical acknowledgements is used for informing the sender about technical validation results such as XML schema validations, schematron errors etc.
 
@@ -43,7 +44,7 @@ In addition, in Pagero Online the use of technical acknowledgements is used for 
 
 The use of the Clearance Notification message type is applicable in clearance and CTC markets where documents needs to be cleared or reported to the government or another assigned authority.
 
-It will inform the issuer of an invoice of the clearance/reporting status (i.e. rejected or accepted) but can also contain clearance artefacts such as QR codes or a signed cleared document.
+It will inform the issuer of an document of the clearance/reporting status (i.e. rejected or accepted) but can also contain clearance artefacts such as QR codes or a signed cleared document.
 
 ==== Invoice Response
 
@@ -58,5 +59,5 @@ The delivered invoice may be technically correct and delivered to the recipient/
 .Version
 |===
 |Version |Date |Description
-|1.0 |2022-12-01 |First version published
+|1.0 |2023-01-27 |First version published
 |===
