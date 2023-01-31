@@ -1,3 +1,3 @@
 Example files can be downloaded here: 
 
-- https://github.com/pagero/puf-clearance-notification/tree/master/examples[PUF Clearance Notification example files (.xml), window=_blank]
+- https://github.com/pagero/puf-clearance-notification/tree/master/examples[PUF Clearance Notification example files^]

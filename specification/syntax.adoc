@@ -49,9 +49,9 @@ include::syntax/ubl-root-application-response/receiver-party.adoc[]
 
 ==== cac:Response
 
-include::syntax/ubl-root-application-response/document-response.adoc[]
+include::syntax/ubl-root-application-response/document-response/response.adoc[]
 
 ==== cac:DocumentReference
 
-include::syntax/ubl-root-application-response/document-reference.adoc[]
+include::syntax/ubl-root-application-response/document-response/document-reference.adoc[]
 
