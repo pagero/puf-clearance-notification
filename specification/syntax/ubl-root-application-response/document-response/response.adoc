@@ -35,26 +35,27 @@ _cac:Response with example values_
           <ext:ExtensionURI>urn:pagero:ExtensionComponent:1.0:PageroExtension:ResponseExtension</ext:ExtensionURI>
           <ext:ExtensionContent>
               <puf:PageroExtension>
-                <puf:ReferencedDocumentInterchangeID>
-                  <cbc:ID>123456789</cbc:ID>
-                </puf:ReferencedDocumentInterchangeID>  
+                <puf:ResponseExtension>
+                  <puf:ReferencedDocumentInterchangeID>
+                    <cbc:ID>123456789</cbc:ID>
+                  </puf:ReferencedDocumentInterchangeID>
+                  <puf:ClearanceReferenceID>
+                    <cbc:ID>4543f3ed-8c20-4eee-a19f-486025fe2773</cbc:ID>
+                  </puf:ClearanceReferenceID>
+                  <puf:ClearanceQR>
+                    <puf:QRString>VGhlIFFSIENvZGU=</puf:QRString>
+                  </puf:ClearanceQR>
+                  <puf:AdditionalDocumentReference>
+                    <cbc:ID>1456123</cbc:ID>
+                    <cbc:DocumentTypeCode>M</cbc:DocumentTypeCode>
+                    <cbc:DocumentDescription>LCD</cbc:DocumentDescription>
+                    <cac:Attachment>
+                      <cbc:EmbeddedDocumentBinaryObject filename="123456789_12345.xml" mimeCode="application/xml">U29tZSBkb2N1bWVudA==</cbc:EmbeddedDocumentBinaryObject>
+                    </cac:Attachment>
+                  </puf:AdditionalDocumentReference>
+                </puf:ResponseExtension>
               </puf:PageroExtension>
-              <puf:ClearanceReferenceID>
-                <cbc:ID>4543f3ed-8c20-4eee-a19f-486025fe2773</cbc:ID>
-              </puf:ClearanceReferenceID>
-              <puf:ClearanceQR>
-                <puf:QRString>VGhlIFFSIENvZGU=</puf:QRString>
-              </puf:ClearanceQR>
-              <puf:AdditionalDocumentReference>
-                <cbc:ID>1456123</cbc:ID>
-                <cbc:DocumentTypeCode>M</cbc:DocumentTypeCode>
-                <cbc:DocumentDescription>LCD</cbc:DocumentDescription>
-                <cac:Attachment>
-                  <cbc:EmbeddedDocumentBinaryObject filename="123456789_12345.xml" mimeCode="application/xml">U29tZSBkb2N1bWVudA==</cbc:EmbeddedDocumentBinaryObject>
-                </cac:Attachment>
-              </puf:AdditionalDocumentReference>
           </ext:ExtensionContent>
-        </ext:UBLExtension>
       <ext:UBLExtensions>
       <cbc:ResponseCode>APPROVED</cbc:ResponseCode>
         <cac:Status>

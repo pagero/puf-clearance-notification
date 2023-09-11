@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.12">
+<meta name="generator" content="Asciidoctor 2.0.20">
+<meta name="author" content="Copyright &copy; 2023, Pagero Group">
 <meta name="copyright" content="Pagero Group">
 <title>PUF Clearance Notification 1.0</title>
 <style>
@@ -427,18 +428,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-/* Stylesheet for CodeRay to match GitHub theme | MIT License | http://foundation.zurb.com */
+/*! Stylesheet for CodeRay to loosely match GitHub themes | MIT License */
 pre.CodeRay{background:#f7f7f8}
-.CodeRay .line-numbers{border-right:1px solid currentColor;opacity:.35;padding:0 .5em 0 0}
+.CodeRay .line-numbers{border-right:1px solid;opacity:.35;padding:0 .5em 0 0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
 .CodeRay span.line-numbers{display:inline-block;margin-right:.75em}
 .CodeRay .line-numbers strong{color:#000}
 table.CodeRay{border-collapse:separate;border:0;margin-bottom:0;background:none}
 table.CodeRay td{vertical-align:top;line-height:inherit}
 table.CodeRay td.line-numbers{text-align:right}
 table.CodeRay td.code{padding:0 0 0 .75em}
-.CodeRay .debug{color:#fff !important;background:#000080 !important}
+.CodeRay .debug{color:#fff!important;background:navy!important}
 .CodeRay .annotation{color:#007}
-.CodeRay .attribute-name{color:#000080}
+.CodeRay .attribute-name{color:navy}
 .CodeRay .attribute-value{color:#700}
 .CodeRay .binary{color:#509}
 .CodeRay .comment{color:#998;font-style:italic}
@@ -447,7 +448,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 .CodeRay .char .delimiter{color:#039}
 .CodeRay .class{color:#458;font-weight:bold}
 .CodeRay .complex{color:#a08}
-.CodeRay .constant,.CodeRay .predefined-constant{color:#008080}
+.CodeRay .constant,.CodeRay .predefined-constant{color:teal}
 .CodeRay .color{color:#099}
 .CodeRay .class-variable{color:#369}
 .CodeRay .decorator{color:#b0b}
@@ -462,7 +463,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 .CodeRay .exception{color:inherit}
 .CodeRay .filename{color:#099}
 .CodeRay .function{color:#900;font-weight:bold}
-.CodeRay .global-variable{color:#008080}
+.CodeRay .global-variable{color:teal}
 .CodeRay .hex{color:#058}
 .CodeRay .integer,.CodeRay .float{color:#099}
 .CodeRay .include{color:#555}
@@ -473,7 +474,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 .CodeRay .inline-delimiter{color:#d14}
 .CodeRay .important{color:#555;font-weight:bold}
 .CodeRay .interpreted{color:#b2b}
-.CodeRay .instance-variable{color:#008080}
+.CodeRay .instance-variable{color:teal}
 .CodeRay .label{color:#970}
 .CodeRay .local-variable{color:#963}
 .CodeRay .octal{color:#40e}
@@ -483,7 +484,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 .CodeRay .directive{font-weight:bold}
 .CodeRay .type{font-weight:bold}
 .CodeRay .predefined-type{color:inherit}
-.CodeRay .reserved,.CodeRay .keyword {color:#000;font-weight:bold}
+.CodeRay .reserved,.CodeRay .keyword{color:#000;font-weight:bold}
 .CodeRay .key{color:#808}
 .CodeRay .key .delimiter{color:#606}
 .CodeRay .key .char{color:#80f}
@@ -503,7 +504,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 .CodeRay .symbol{color:#990073}
 .CodeRay .symbol .content{color:#a60}
 .CodeRay .symbol .delimiter{color:#630}
-.CodeRay .tag{color:#008080}
+.CodeRay .tag{color:teal}
 .CodeRay .tag-special{color:#d70}
 .CodeRay .variable{color:#036}
 .CodeRay .insert{background:#afa}
@@ -697,7 +698,7 @@ This specification concerns the <strong>Clearance Notification</strong> response
 <p><em>Example: A possible orchestation of messages supporting a market where invoices are required to be reported to a clearance authority and where a buyer has the possibility to send an invoice response.</em></p>
 </div>
 <div class="paragraph">
-<p><span class="image center"><img src="images/response-messages-overview.JPG" alt="response messages overview" width="100%"></span></p>
+<p><span class="image center"><img src="images/response-messages-overview.png" alt="response messages overview" width="100%"></span></p>
 </div>
 <div class="sect3">
 <h4 id="_technical_acknowledgement"><a class="anchor" href="#_technical_acknowledgement"></a><a class="link" href="#_technical_acknowledgement">1.2.1. Technical acknowledgement</a></h4>
@@ -1324,26 +1325,27 @@ The description of the clarification given for the notification status.</p></td>
           <span class="tag">&lt;ext:ExtensionURI&gt;</span>urn:pagero:ExtensionComponent:1.0:PageroExtension:ResponseExtension<span class="tag">&lt;/ext:ExtensionURI&gt;</span>
           <span class="tag">&lt;ext:ExtensionContent&gt;</span>
               <span class="tag">&lt;puf:PageroExtension&gt;</span>
-                <span class="tag">&lt;puf:ReferencedDocumentInterchangeID&gt;</span>
-                  <span class="tag">&lt;cbc:ID&gt;</span>123456789<span class="tag">&lt;/cbc:ID&gt;</span>
-                <span class="tag">&lt;/puf:ReferencedDocumentInterchangeID&gt;</span>
+                <span class="tag">&lt;puf:ResponseExtension&gt;</span>
+                  <span class="tag">&lt;puf:ReferencedDocumentInterchangeID&gt;</span>
+                    <span class="tag">&lt;cbc:ID&gt;</span>123456789<span class="tag">&lt;/cbc:ID&gt;</span>
+                  <span class="tag">&lt;/puf:ReferencedDocumentInterchangeID&gt;</span>
+                  <span class="tag">&lt;puf:ClearanceReferenceID&gt;</span>
+                    <span class="tag">&lt;cbc:ID&gt;</span>4543f3ed-8c20-4eee-a19f-486025fe2773<span class="tag">&lt;/cbc:ID&gt;</span>
+                  <span class="tag">&lt;/puf:ClearanceReferenceID&gt;</span>
+                  <span class="tag">&lt;puf:ClearanceQR&gt;</span>
+                    <span class="tag">&lt;puf:QRString&gt;</span>VGhlIFFSIENvZGU=<span class="tag">&lt;/puf:QRString&gt;</span>
+                  <span class="tag">&lt;/puf:ClearanceQR&gt;</span>
+                  <span class="tag">&lt;puf:AdditionalDocumentReference&gt;</span>
+                    <span class="tag">&lt;cbc:ID&gt;</span>1456123<span class="tag">&lt;/cbc:ID&gt;</span>
+                    <span class="tag">&lt;cbc:DocumentTypeCode&gt;</span>M<span class="tag">&lt;/cbc:DocumentTypeCode&gt;</span>
+                    <span class="tag">&lt;cbc:DocumentDescription&gt;</span>LCD<span class="tag">&lt;/cbc:DocumentDescription&gt;</span>
+                    <span class="tag">&lt;cac:Attachment&gt;</span>
+                      <span class="tag">&lt;cbc:EmbeddedDocumentBinaryObject</span> <span class="attribute-name">filename</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">123456789_12345.xml</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">mimeCode</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">application/xml</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>U29tZSBkb2N1bWVudA==<span class="tag">&lt;/cbc:EmbeddedDocumentBinaryObject&gt;</span>
+                    <span class="tag">&lt;/cac:Attachment&gt;</span>
+                  <span class="tag">&lt;/puf:AdditionalDocumentReference&gt;</span>
+                <span class="tag">&lt;/puf:ResponseExtension&gt;</span>
               <span class="tag">&lt;/puf:PageroExtension&gt;</span>
-              <span class="tag">&lt;puf:ClearanceReferenceID&gt;</span>
-                <span class="tag">&lt;cbc:ID&gt;</span>4543f3ed-8c20-4eee-a19f-486025fe2773<span class="tag">&lt;/cbc:ID&gt;</span>
-              <span class="tag">&lt;/puf:ClearanceReferenceID&gt;</span>
-              <span class="tag">&lt;puf:ClearanceQR&gt;</span>
-                <span class="tag">&lt;puf:QRString&gt;</span>VGhlIFFSIENvZGU=<span class="tag">&lt;/puf:QRString&gt;</span>
-              <span class="tag">&lt;/puf:ClearanceQR&gt;</span>
-              <span class="tag">&lt;puf:AdditionalDocumentReference&gt;</span>
-                <span class="tag">&lt;cbc:ID&gt;</span>1456123<span class="tag">&lt;/cbc:ID&gt;</span>
-                <span class="tag">&lt;cbc:DocumentTypeCode&gt;</span>M<span class="tag">&lt;/cbc:DocumentTypeCode&gt;</span>
-                <span class="tag">&lt;cbc:DocumentDescription&gt;</span>LCD<span class="tag">&lt;/cbc:DocumentDescription&gt;</span>
-                <span class="tag">&lt;cac:Attachment&gt;</span>
-                  <span class="tag">&lt;cbc:EmbeddedDocumentBinaryObject</span> <span class="attribute-name">filename</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">123456789_12345.xml</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">mimeCode</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">application/xml</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>U29tZSBkb2N1bWVudA==<span class="tag">&lt;/cbc:EmbeddedDocumentBinaryObject&gt;</span>
-                <span class="tag">&lt;/cac:Attachment&gt;</span>
-              <span class="tag">&lt;/puf:AdditionalDocumentReference&gt;</span>
           <span class="tag">&lt;/ext:ExtensionContent&gt;</span>
-        <span class="tag">&lt;/ext:UBLExtension&gt;</span>
       <span class="tag">&lt;ext:UBLExtensions&gt;</span>
       <span class="tag">&lt;cbc:ResponseCode&gt;</span>APPROVED<span class="tag">&lt;/cbc:ResponseCode&gt;</span>
         <span class="tag">&lt;cac:Status&gt;</span>
@@ -1427,7 +1429,7 @@ For valid values see code list <a href="https://pagero.github.io/puf-code-lists/
 <div class="sect3">
 <h4 id="_pufresponseextension"><a class="anchor" href="#_pufresponseextension"></a><a class="link" href="#_pufresponseextension">puf:ResponseExtension</a></h4>
 <div class="paragraph">
-<p>Below table shows the definition of elements added to the extension <code>puf:ResponseExtension</code>.</p>
+<p>Below table shows the definition of elements added to the extension <code>puf:PageroExtension/puf:ResponseExtension</code>.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 6. Elements added in puf:ResponseExtension</caption>
@@ -1514,24 +1516,26 @@ The attached document embedded as binary object (Base64).</p></td>
           <span class="tag">&lt;ext:ExtensionURI&gt;</span>urn:pagero:ExtensionComponent:1.0:PageroExtension:ResponseExtension<span class="tag">&lt;/ext:ExtensionURI&gt;</span>
           <span class="tag">&lt;ext:ExtensionContent&gt;</span>
               <span class="tag">&lt;puf:PageroExtension&gt;</span>
-                <span class="tag">&lt;puf:ReferencedDocumentInterchangeID&gt;</span>
-                  <span class="tag">&lt;cbc:ID&gt;</span>123456789<span class="tag">&lt;/cbc:ID&gt;</span>
-                <span class="tag">&lt;/puf:ReferencedDocumentInterchangeID&gt;</span>
+                <span class="tag">&lt;puf:ResponseExtension&gt;</span>
+                  <span class="tag">&lt;puf:ReferencedDocumentInterchangeID&gt;</span>
+                    <span class="tag">&lt;cbc:ID&gt;</span>123456789<span class="tag">&lt;/cbc:ID&gt;</span>
+                  <span class="tag">&lt;/puf:ReferencedDocumentInterchangeID&gt;</span>
+                  <span class="tag">&lt;puf:ClearanceReferenceID&gt;</span>
+                    <span class="tag">&lt;cbc:ID&gt;</span>4543f3ed-8c20-4eee-a19f-486025fe2773<span class="tag">&lt;/cbc:ID&gt;</span>
+                  <span class="tag">&lt;/puf:ClearanceReferenceID&gt;</span>
+                  <span class="tag">&lt;puf:ClearanceQR&gt;</span>
+                    <span class="tag">&lt;puf:QRString&gt;</span>VGhlIFFSIENvZGU=<span class="tag">&lt;/puf:QRString&gt;</span>
+                  <span class="tag">&lt;/puf:ClearanceQR&gt;</span>
+                  <span class="tag">&lt;puf:AdditionalDocumentReference&gt;</span>
+                    <span class="tag">&lt;cbc:ID&gt;</span>1456123<span class="tag">&lt;/cbc:ID&gt;</span>
+                    <span class="tag">&lt;cbc:DocumentTypeCode&gt;</span>M<span class="tag">&lt;/cbc:DocumentTypeCode&gt;</span>
+                    <span class="tag">&lt;cbc:DocumentDescription&gt;</span>LCD<span class="tag">&lt;/cbc:DocumentDescription&gt;</span>
+                    <span class="tag">&lt;cac:Attachment&gt;</span>
+                      <span class="tag">&lt;cbc:EmbeddedDocumentBinaryObject</span> <span class="attribute-name">filename</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">123456789_12345.xml</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">mimeCode</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">application/xml</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>U29tZSBkb2N1bWVudA==<span class="tag">&lt;/cbc:EmbeddedDocumentBinaryObject&gt;</span>
+                    <span class="tag">&lt;/cac:Attachment&gt;</span>
+                  <span class="tag">&lt;/puf:AdditionalDocumentReference&gt;</span>
+                <span class="tag">&lt;/puf:ResponseExtension&gt;</span>
               <span class="tag">&lt;/puf:PageroExtension&gt;</span>
-              <span class="tag">&lt;puf:ClearanceReferenceID&gt;</span>
-                <span class="tag">&lt;cbc:ID&gt;</span>4543f3ed-8c20-4eee-a19f-486025fe2773<span class="tag">&lt;/cbc:ID&gt;</span>
-              <span class="tag">&lt;/puf:ClearanceReferenceID&gt;</span>
-              <span class="tag">&lt;puf:ClearanceQR&gt;</span>
-                <span class="tag">&lt;puf:QRString&gt;</span>VGhlIFFSIENvZGU=<span class="tag">&lt;/puf:QRString&gt;</span>
-              <span class="tag">&lt;/puf:ClearanceQR&gt;</span>
-              <span class="tag">&lt;puf:AdditionalDocumentReference&gt;</span>
-                <span class="tag">&lt;cbc:ID&gt;</span>1456123<span class="tag">&lt;/cbc:ID&gt;</span>
-                <span class="tag">&lt;cbc:DocumentTypeCode&gt;</span>M<span class="tag">&lt;/cbc:DocumentTypeCode&gt;</span>
-                <span class="tag">&lt;cbc:DocumentDescription&gt;</span>LCD<span class="tag">&lt;/cbc:DocumentDescription&gt;</span>
-                <span class="tag">&lt;cac:Attachment&gt;</span>
-                  <span class="tag">&lt;cbc:EmbeddedDocumentBinaryObject</span> <span class="attribute-name">filename</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">123456789_12345.xml</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">mimeCode</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">application/xml</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>U29tZSBkb2N1bWVudA==<span class="tag">&lt;/cbc:EmbeddedDocumentBinaryObject&gt;</span>
-                <span class="tag">&lt;/cac:Attachment&gt;</span>
-              <span class="tag">&lt;/puf:AdditionalDocumentReference&gt;</span>
           <span class="tag">&lt;/ext:ExtensionContent&gt;</span>
         <span class="tag">&lt;/ext:UBLExtension&gt;</span>
       <span class="tag">&lt;ext:UBLExtensions&gt;</span>
