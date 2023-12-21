@@ -23,6 +23,11 @@ NOTE: The "Require ext:UBLExtensions?"-column indicates whether or not the use o
 |===
 |Country |Supported by PUF |Require ext:UBLExtensions? |Comment
 
+|Greece
+|*Yes*
+|*Yes*
+|-
+
 |Hungary
 |*Yes*
 |*Yes*
