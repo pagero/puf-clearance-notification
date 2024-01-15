@@ -6,6 +6,14 @@ Below table shows the definition of elements added to the extension `puf:PageroE
 |===
 |Element |Description
 
+|`puf:RestrictedInformation/puf:Key`
+|**Key** +
+Key defining the type of value.
+
+|`puf:RestrictedInformation/puf:Value`
+|**Value** +
+Value relevant to the assigned key.
+
 |`puf:ReferencedDocumentInterchangeID/cbc:ID`
 | **Referenced document unique ID** +
 The interchange id of the referenced document (if sent by the issuer).
@@ -67,6 +75,10 @@ _puf:ResponseExtension with sample values._
           <ext:ExtensionContent>
               <puf:PageroExtension>
                 <puf:ResponseExtension>
+                  <puf:RestrictedInformation>
+                    <puf:Key>TheKey</puf:Key>
+                    <puf:Value>TheValue</puf:Value>
+                  </puf:RestrictedInformation>
                   <puf:ReferencedDocumentInterchangeID>
                     <cbc:ID>123456789</cbc:ID>
                   </puf:ReferencedDocumentInterchangeID>

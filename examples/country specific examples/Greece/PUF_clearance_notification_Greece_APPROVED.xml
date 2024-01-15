@@ -48,6 +48,18 @@
                     <ext:ExtensionContent>
                         <puf:PageroExtension>
                             <puf:ResponseExtension>
+                                <!-- UID -->
+                                <puf:RestrictedInformation>
+                                    <puf:Key>UID</puf:Key>
+                                    <puf:Value>6G8EEG5C25A51D30A4H687APP64E4565DCC5126</puf:Value>
+                                </puf:RestrictedInformation>
+                                
+                                <!-- AUTHENTICATIONCODE -->
+                                <puf:RestrictedInformation>
+                                    <puf:Key>AUTHENTICATIONCODE</puf:Key>
+                                    <puf:Value>C8RR26A4AC1746D35AC26DA7BB13DA34B5582730</puf:Value>
+                                </puf:RestrictedInformation>
+                                
                                 <!-- The interchange id of the referenced document. If sent by the issuer -->
                                 <puf:ReferencedDocumentInterchangeID>
                                     <cbc:ID>123456789</cbc:ID>
