@@ -39,6 +39,11 @@ NOTE: The "Require ext:UBLExtensions?"-column indicates whether or not the use o
 |*Yes*
 |-
 
+|Poland
+|*Yes*
+|*Yes*
+|-
+
 |Saudi Arabia
 |*Yes*
 |*Yes*
