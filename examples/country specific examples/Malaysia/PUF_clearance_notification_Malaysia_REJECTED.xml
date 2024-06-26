@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApplicationResponse xmlns="urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2"
+                     xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+                     xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+                     xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+                     xmlns:puf="urn:pagero:ExtensionComponent:1.0">
+   <cbc:CustomizationID>urn:pagero.com:puf:clearance_notification:1.0</cbc:CustomizationID>
+   <cbc:ProfileID>urn:pagero.com:puf:clearance_notification:1.0</cbc:ProfileID>
+   <cbc:ID>78a29812-4f9d-4a63-bbf4-4b8e51a1ffa4</cbc:ID>
+   <cbc:IssueDate>2024-06-25</cbc:IssueDate>
+   <cbc:IssueTime>14:50:55</cbc:IssueTime>
+   <cac:SenderParty>
+      <cac:PartyName>
+         <cbc:Name>LHDN (Malaysia)</cbc:Name>
+      </cac:PartyName>
+   </cac:SenderParty>
+   <cac:ReceiverParty>
+      <cbc:EndpointID>C58662360030</cbc:EndpointID>
+      <cac:PartyLegalEntity>
+         <cbc:RegistrationName>Demo Company A</cbc:RegistrationName>
+      </cac:PartyLegalEntity>
+   </cac:ReceiverParty>
+   <cac:DocumentResponse>
+      <cac:Response>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionURI>urn:pagero:ExtensionComponent:1.0:PageroExtension:ResponseExtension</ext:ExtensionURI>
+               <ext:ExtensionContent>
+                  <puf:PageroExtension>
+                     <puf:ResponseExtension>
+                        <puf:RestrictedInformation>
+                           <puf:Key>dateTimeValidated</puf:Key>
+                           <puf:Value>2024-06-25T14:48:17Z</puf:Value>
+                        </puf:RestrictedInformation>
+                        <puf:ReferencedDocumentInterchangeID>
+                           <cbc:ID>Source_1159546.xml</cbc:ID>
+                        </puf:ReferencedDocumentInterchangeID>
+                        <puf:ClearanceReferenceID>
+                           <cbc:ID>86A1AQN1ECXGKSVJEFTWX71L17</cbc:ID>
+                        </puf:ClearanceReferenceID>
+                     </puf:ResponseExtension>
+                  </puf:PageroExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:ResponseCode>REJECTED</cbc:ResponseCode>
+         <cac:Status>
+            <cbc:StatusReasonCode>Invalid</cbc:StatusReasonCode>
+            <cbc:StatusReason>Step14-Taxpayer Profile Validator
+propertyName: CustomerIdentity propertyPath: document.Invoice.AccountingCustomerParty.Party.PartyIdentification.ID errorCode: ERR223 error: BRN Mismatch</cbc:StatusReason>
+         </cac:Status>
+      </cac:Response>
+      <cac:DocumentReference>
+         <cbc:ID>1159546</cbc:ID>
+         <cbc:IssueDate>2024-06-24</cbc:IssueDate>
+         <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
+      </cac:DocumentReference>
+   </cac:DocumentResponse>
+</ApplicationResponse>
