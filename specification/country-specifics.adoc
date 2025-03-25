@@ -16,52 +16,58 @@ The list of supported countries/regions are updated continuously as PUF is devel
 
 The following list gives an overview of country support in PUF Clearance Notification.
 
-NOTE: The "Require ext:UBLExtensions?"-column indicates whether or not the use of UBL extensions is required to be able to comply with the country requirements.
+NOTE: Refer to the example files to see typical values that can be provided in each country/region
 
 .Table of supported countries
 [%autowidth.stretch]
 |===
-|Country |Supported by PUF |Require ext:UBLExtensions? |Comment
+|Country |Clearance notification |Tax report notification|Comment
 
 |Greece
 |*Yes*
-|*Yes*
+|-
 |-
 
 |Hungary
 |*Yes*
-|*Yes*
+|-
 |-
 
 
 |India
 |*Yes*
-|*Yes*
+|-
 |-
 
 |Israel
 |*Yes*
-|*Yes*
+|-
 |-
 
 |Poland
 |*Yes*
-|*Yes*
+|-
 |-
 
 |Saudi Arabia
 |*Yes*
-|*Yes*
+|-
 |-
 
 |Serbia
 |*Yes*
-|*Yes*
 |-
+|-
+
+|Singapore
+|-
+|*Yes*
+|*Beta version only*
+
 
 |Spain (Basque Country)
 |*Yes*
-|*Yes*
+|-
 |Support for TicketBAI system in the Basque region.
 
 |===

@@ -4,16 +4,29 @@
 |`cbc:ProfileID`
 |**Business process type** +
 Identifies the business process. +
-_Must be value 'urn:pagero.com:puf:clearance_notification:1.0'._
+*urn:pagero.com:puf:clearance_notification:1.0* _Indicates that response is given in a clearance process_ +
+*urn:pagero.com:puf:taxreport_notfication:1.0* _Indicates that response is given in a tax data reporting process_
 |===
 
 *Example* +
-_cbc:ProfileID populated with correct value_
+_cbc:ProfileID populated with correct value to indicate that response is given within a clearance process_
 [source,xml]
 ----
 <ApplicationResponse>
   <!-- Code omitted for clarity -->
   <cbc:ProfileID>urn:pagero.com:puf:clearance_notification:1.0</cbc:ProfileID>
+  <!-- Code omitted for clarity -->
+</ApplicationResponse>
+----
+
+
+*Example* +
+_cbc:ProfileID populated with correct value to indicate that response is given within a tax data reporting process_
+[source,xml]
+----
+<ApplicationResponse>
+  <!-- Code omitted for clarity -->
+  <cbc:ProfileID>urn:pagero.com:puf:taxreport_notfication:1.0</cbc:ProfileID>
   <!-- Code omitted for clarity -->
 </ApplicationResponse>
 ----
