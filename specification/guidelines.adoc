@@ -43,8 +43,9 @@ To indicate the correct PUF specification identifer and the profile identifier, 
 |Type |Element `cbc:CustomizationID` |Element `cbc:ProfileID`
 
 |*Clearance Notification*
-|urn:pagero.com:puf:clearance_notification:1.0
-|urn:pagero.com:puf:clearance_notification:1.0
+|urn:pagero.com:puf:clearance_notification:1.0 
+|*urn:pagero.com:puf:clearance_notification:1.0* _Indicates that response is given in a clearance process_ +
+*urn:pagero.com:puf:taxreport_notfication:1.0* _Indicates that response is given in a tax data reporting process_
 |===
 
 *Example*

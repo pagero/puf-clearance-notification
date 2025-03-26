@@ -4,7 +4,7 @@
 
 |`cac:PartyName/cbc:Name`
 |**Sender party name** +
-Clearance authority name.
+Clearance/Tax authority name.
 |===
 
 *Example* +
@@ -15,7 +15,7 @@ _cac:SenderParty with example values_
   <!-- Code omitted for clarity -->
   <cac:SenderParty>
       <cac:PartyName>
-        <cbc:Name>Clearance authority name</cbc:Name>
+        <cbc:Name>Clearance/Tax authority name</cbc:Name>
       </cac:PartyName>
   </cac:SenderParty>
   <!-- Code omitted for clarity -->

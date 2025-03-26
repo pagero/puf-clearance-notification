@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.20">
+<meta name="generator" content="Asciidoctor 2.0.23">
 <meta name="author" content="Copyright &copy; 2023, Pagero Group">
 <meta name="copyright" content="Pagero Group">
 <title>PUF Clearance Notification 1.0</title>
@@ -813,7 +813,8 @@ point A to B.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Clearance Notification</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">urn:pagero.com:puf:clearance_notification:1.0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">urn:pagero.com:puf:clearance_notification:1.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>urn:pagero.com:puf:clearance_notification:1.0</strong> <em>Indicates that response is given in a clearance process</em><br>
+<strong>urn:pagero.com:puf:taxreport_notfication:1.0</strong> <em>Indicates that response is given in a tax data reporting process</em></p></td>
 </tr>
 </tbody>
 </table>
@@ -1005,19 +1006,33 @@ This is the root element in the UBL XML schema.
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>cbc:ProfileID</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Business process type</strong><br>
 Identifies the business process.<br>
-<em>Must be value 'urn:pagero.com:puf:clearance_notification:1.0'.</em></p></td>
+<strong>urn:pagero.com:puf:clearance_notification:1.0</strong> <em>Indicates that response is given in a clearance process</em><br>
+<strong>urn:pagero.com:puf:taxreport_notfication:1.0</strong> <em>Indicates that response is given in a tax data reporting process</em></p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
 <p><strong>Example</strong><br>
-<em>cbc:ProfileID populated with correct value</em></p>
+<em>cbc:ProfileID populated with correct value to indicate that response is given within a clearance process</em></p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;ApplicationResponse&gt;</span>
   <span class="comment">&lt;!-- Code omitted for clarity --&gt;</span>
   <span class="tag">&lt;cbc:ProfileID&gt;</span>urn:pagero.com:puf:clearance_notification:1.0<span class="tag">&lt;/cbc:ProfileID&gt;</span>
+  <span class="comment">&lt;!-- Code omitted for clarity --&gt;</span>
+<span class="tag">&lt;/ApplicationResponse&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Example</strong><br>
+<em>cbc:ProfileID populated with correct value to indicate that response is given within a tax data reporting process</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;ApplicationResponse&gt;</span>
+  <span class="comment">&lt;!-- Code omitted for clarity --&gt;</span>
+  <span class="tag">&lt;cbc:ProfileID&gt;</span>urn:pagero.com:puf:taxreport_notfication:1.0<span class="tag">&lt;/cbc:ProfileID&gt;</span>
   <span class="comment">&lt;!-- Code omitted for clarity --&gt;</span>
 <span class="tag">&lt;/ApplicationResponse&gt;</span></code></pre>
 </div>
@@ -1183,7 +1198,7 @@ Free text, can be repeated multiple times.</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>cac:PartyName/cbc:Name</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sender party name</strong><br>
-Clearance authority name.</p></td>
+Clearance/Tax authority name.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1197,7 +1212,7 @@ Clearance authority name.</p></td>
   <span class="comment">&lt;!-- Code omitted for clarity --&gt;</span>
   <span class="tag">&lt;cac:SenderParty&gt;</span>
       <span class="tag">&lt;cac:PartyName&gt;</span>
-        <span class="tag">&lt;cbc:Name&gt;</span>Clearance authority name<span class="tag">&lt;/cbc:Name&gt;</span>
+        <span class="tag">&lt;cbc:Name&gt;</span>Clearance/Tax authority name<span class="tag">&lt;/cbc:Name&gt;</span>
       <span class="tag">&lt;/cac:PartyName&gt;</span>
   <span class="tag">&lt;/cac:SenderParty&gt;</span>
   <span class="comment">&lt;!-- Code omitted for clarity --&gt;</span>
@@ -1598,7 +1613,7 @@ The attached document embedded as binary object (Base64).</p></td>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The "Require ext:UBLExtensions?"-column indicates whether or not the use of UBL extensions is required to be able to comply with the country requirements.
+Refer to the example files to see typical values that can be provided in each country/region
 </td>
 </tr>
 </table>
@@ -1614,8 +1629,8 @@ The "Require ext:UBLExtensions?"-column indicates whether or not the use of UBL 
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Country</th>
-<th class="tableblock halign-left valign-top">Supported by PUF</th>
-<th class="tableblock halign-left valign-top">Require ext:UBLExtensions?</th>
+<th class="tableblock halign-left valign-top">Clearance notification</th>
+<th class="tableblock halign-left valign-top">Tax report notification</th>
 <th class="tableblock halign-left valign-top">Comment</th>
 </tr>
 </thead>
@@ -1623,49 +1638,55 @@ The "Require ext:UBLExtensions?"-column indicates whether or not the use of UBL 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Greece</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Yes</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Yes</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Hungary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Yes</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Yes</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">India</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Yes</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Yes</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Israel</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Yes</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Yes</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Poland</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Yes</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Yes</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Saudi Arabia</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Yes</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Yes</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Serbia</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Yes</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Yes</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Singapore</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Yes</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beta version only</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Spain (Basque Country)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Yes</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Yes</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Support for TicketBAI system in the Basque region.</p></td>
 </tr>
 </tbody>
