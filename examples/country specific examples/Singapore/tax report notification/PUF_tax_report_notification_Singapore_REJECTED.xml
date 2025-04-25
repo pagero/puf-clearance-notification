@@ -39,10 +39,6 @@
                <ext:ExtensionContent>
                   <puf:PageroExtension>
                      <puf:ResponseExtension>
-                        <!-- The interchange id of the referenced document. If sent by the issuer -->
-                        <puf:ReferencedDocumentInterchangeID>
-                           <cbc:ID>123456789</cbc:ID>
-                        </puf:ReferencedDocumentInterchangeID>
                         <!-- The sender id. Senders/submitters peppol ID.-->
                         <puf:RestrictedInformation>
                            <puf:Key>senderId</puf:Key>
@@ -58,6 +54,10 @@
                            <puf:Key>documentUuid</puf:Key>
                            <puf:Value>a2eec9a7-a4f3-4e2c-9005-bc240ca6e612</puf:Value>
                         </puf:RestrictedInformation>
+                        <!-- The interchange id of the referenced document. If sent by the issuer -->
+                        <puf:ReferencedDocumentInterchangeID>
+                           <cbc:ID>123456789</cbc:ID>
+                        </puf:ReferencedDocumentInterchangeID>
                      </puf:ResponseExtension>
                   </puf:PageroExtension>
                </ext:ExtensionContent>
