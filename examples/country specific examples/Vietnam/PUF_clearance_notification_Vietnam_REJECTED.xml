@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApplicationResponse xmlns="urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:puf="urn:pagero:ExtensionComponent:1.0">
+    <cbc:CustomizationID>urn:pagero.com:puf:clearance_notification:1.0</cbc:CustomizationID>
+    <cbc:ProfileID>urn:pagero.com:puf:clearance_notification:1.0</cbc:ProfileID>
+    <cbc:ID>f84c5e2a-7b3d-4a2e-89c5-2e6b4d1a3f094</cbc:ID>
+    <cbc:IssueDate>2025-07-31</cbc:IssueDate>
+    <cbc:IssueTime>02:27:58</cbc:IssueTime>
+    <cbc:Note>The invoice email was NOT sent to recipient. Please correct and/or resend in FPT portal</cbc:Note>
+    <cac:SenderParty>
+        <cac:PartyName>
+            <cbc:Name>GDT Vietnam</cbc:Name>
+        </cac:PartyName>
+    </cac:SenderParty>
+    <cac:ReceiverParty>
+        <cbc:EndpointID>123456789</cbc:EndpointID>
+        <cac:PartyLegalEntity>
+            <cbc:RegistrationName>Company</cbc:RegistrationName>
+        </cac:PartyLegalEntity>
+    </cac:ReceiverParty>
+    <cac:DocumentResponse>
+        <cac:Response>
+            <ext:UBLExtensions>
+                <ext:UBLExtension>
+                    <ext:ExtensionURI>urn:pagero:ExtensionComponent:1.0:PageroExtension:ResponseExtension</ext:ExtensionURI>
+                    <ext:ExtensionContent>
+                        <puf:PageroExtension>
+                            <puf:ResponseExtension>
+                                <puf:ReferencedDocumentInterchangeID>
+                                    <cbc:ID>I123456789Test.xml</cbc:ID>
+                                </puf:ReferencedDocumentInterchangeID>
+                            </puf:ResponseExtension>
+                        </puf:PageroExtension>
+                    </ext:ExtensionContent>
+                </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:ResponseCode>REJECTED</cbc:ResponseCode>
+            <cac:Status>
+                <cbc:StatusReasonCode>9</cbc:StatusReasonCode>
+                <cbc:StatusReason>-1 - Lỗi MST người mua không tồn tại - Kiểm tra lại định dạng dữ liệu</cbc:StatusReason>
+            </cac:Status>
+            <!-- Translation of status Reason: "-1 - Error: Buyer's tax code does not exist - Please check the data format again"-->
+        </cac:Response>
+        <cac:DocumentReference>
+            <cbc:ID>123456789Test</cbc:ID>
+            <cbc:IssueDate>2025-07-31</cbc:IssueDate>
+            <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
+        </cac:DocumentReference>
+    </cac:DocumentResponse>
+</ApplicationResponse>
