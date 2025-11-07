@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApplicationResponse
+    xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+    xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+    xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+    xmlns:puf="urn:pagero:ExtensionComponent:1.0"
+    xmlns="urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2">
+    <cbc:CustomizationID>urn:pagero.com:puf:taxdata_response:1.0</cbc:CustomizationID>
+    <cbc:ProfileID>urn:pagero.com:puf:taxdata_response:1.0</cbc:ProfileID>
+    <cbc:ID>6b212a9a-0e1f-4494-a75a-f5f5141ccbaf</cbc:ID>
+    <cbc:IssueDate>2025-10-17</cbc:IssueDate>
+    <cbc:IssueTime>14:45:34</cbc:IssueTime>
+    <cac:SenderParty>
+        <cac:PartyName>
+            <cbc:Name>Croatia eRačun</cbc:Name>
+        </cac:PartyName>
+    </cac:SenderParty>
+    <cac:ReceiverParty/>
+    <cac:DocumentResponse>
+        <cac:Response>
+            <ext:UBLExtensions>
+                <ext:UBLExtension>
+                    <ext:ExtensionURI>urn:pagero:ExtensionComponent:1.0:PageroExtension:ResponseExtension</ext:ExtensionURI>
+                    <ext:ExtensionContent>
+                        <puf:PageroExtension>
+                            <puf:ResponseExtension>
+                                <puf:ReferencedDocumentInterchangeID>
+                                    <cbc:ID>123456789</cbc:ID>
+                                </puf:ReferencedDocumentInterchangeID>
+                                <puf:ClearanceReferenceID>
+                                    <cbc:ID>9868b128-e384-4328-b849-f5f5141ccc71</cbc:ID>
+                                </puf:ClearanceReferenceID>
+                            </puf:ResponseExtension>
+                        </puf:PageroExtension>
+                    </ext:ExtensionContent>
+                </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:ResponseCode>APPROVED</cbc:ResponseCode>
+        </cac:Response>
+        <cac:DocumentReference>
+            <cbc:ID>HR-2025-00141</cbc:ID>
+            <cbc:IssueDate>2025-09-15</cbc:IssueDate>
+        </cac:DocumentReference>
+    </cac:DocumentResponse>
+</ApplicationResponse>

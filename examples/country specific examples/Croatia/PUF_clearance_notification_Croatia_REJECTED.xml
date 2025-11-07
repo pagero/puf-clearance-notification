@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApplicationResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+                     xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+                     xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+                     xmlns:puf="urn:pagero:ExtensionComponent:1.0"
+                     xmlns="urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2">
+   
+   <!-- NOTE that this is an example. Track the GitHub page for PUF to see changes and updates. -->
+   
+   <!-- CustomizationID. Specification identification -->
+   <cbc:CustomizationID>urn:pagero.com:puf:clearance_notification:1.0</cbc:CustomizationID>
+   
+   <!-- ProfileID. Business process type identifier -->
+   <cbc:ProfileID>urn:pagero.com:puf:clearance_notification:1.0</cbc:ProfileID>
+   
+   <!-- Response identifier. A unique id to identify the response. -->
+   <cbc:ID>ef5e6401-843g-6834-dh6g-f5f5141c1de9</cbc:ID>
+   
+   <!-- cbc:IssueDate. Date when the clearance response was issued -->
+   <cbc:IssueDate>2025-10-20</cbc:IssueDate>
+   
+   <!-- cbc:IssueTime. Time when the clearance response was issued -->
+   <cbc:IssueTime>10:32:54</cbc:IssueTime>
+   
+   <!-- cac:SenderParty. Sender information - Croatian tax authority -->
+   <cac:SenderParty>
+      <cac:PartyName>
+         <cbc:Name>Croatia eRacun</cbc:Name>
+      </cac:PartyName>
+   </cac:SenderParty>
+   
+   <!-- cac:ReceiverParty. Receiver information - The party receiving the clearance notification -->
+   <cac:ReceiverParty>
+      <!-- EndpointID. OIB (Personal Identification Number) of the receiver -->
+      <cbc:EndpointID>82430769254</cbc:EndpointID>
+      <cac:PartyLegalEntity>
+         <!-- RegistrationName. Legal name of the receiving party -->
+         <cbc:RegistrationName>Pagero AB</cbc:RegistrationName>
+      </cac:PartyLegalEntity>
+   </cac:ReceiverParty>
+   
+   <!-- cac:DocumentResponse. Document response containing the clearance result -->
+   <cac:DocumentResponse>
+      
+      <!-- Response information -->
+      <cac:Response>
+         
+         <!-- UBL Extensions for PUF-specific response data -->
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionURI>urn:pagero:ExtensionComponent:1.0:PageroExtension:ResponseExtension</ext:ExtensionURI>
+               <ext:ExtensionContent>
+                  <puf:PageroExtension>
+                     <puf:ResponseExtension>
+                        <!-- Third party documentId, needed for Payment Report -->
+                        <puf:RestrictedInformation>
+                           <puf:Key>documentId</puf:Key>
+                           <puf:Value>93c567h8d5g9e07i86h5916f</puf:Value>
+                        </puf:RestrictedInformation>
+                        
+                        <!-- The interchange id of the referenced document. If sent by the issuer -->
+                        <puf:ReferencedDocumentInterchangeID>
+                           <cbc:ID>123459</cbc:ID>
+                        </puf:ReferencedDocumentInterchangeID>
+                     </puf:ResponseExtension>
+                  </puf:PageroExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         
+         <!-- Response Code:
+              Possible clearance response codes
+              APPROVED = Approved by Clearance Authority
+              APPROVED_WITH_WARNINGS = Approved by Clearance Authority but not distributed electronically
+              REJECTED = Rejected by Clearance Authority.
+         -->
+         <cbc:ResponseCode>REJECTED</cbc:ResponseCode>
+         
+         <!-- Clarification if applicable. Contains detailed error information -->
+         <cac:Status>
+            <!-- StatusReasonCode. Croatian fiscalization error code returned by clearance authority (S008 = An eInvoice with the same identifier already exists) -->
+            <cbc:StatusReasonCode>S_008</cbc:StatusReasonCode>
+            <!-- StatusReason. Reason for clarification - Duplicate eInvoice identifier detected -->
+            <cbc:StatusReason>Već postoji zabilježen eRačun s istim identifikatorom.</cbc:StatusReason>
+         </cac:Status>
+      </cac:Response>
+      
+      <!-- DocumentReference. Reference to the original invoice that was submitted for clearance -->
+      <cac:DocumentReference>
+         <!-- Reference to the invoice (invoice number) -->
+         <cbc:ID>HR-2025-00144</cbc:ID>
+         <!-- The date when the invoice was issued -->
+         <cbc:IssueDate>2025-10-20</cbc:IssueDate>
+         <!-- DocumentTypeCode. The invoice type in the referenced invoice (380 = Commercial Invoice) -->
+         <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
+      </cac:DocumentReference>
+   </cac:DocumentResponse>
+</ApplicationResponse>
