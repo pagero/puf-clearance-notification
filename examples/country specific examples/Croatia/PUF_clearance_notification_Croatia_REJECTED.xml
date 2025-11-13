@@ -52,11 +52,6 @@
                <ext:ExtensionContent>
                   <puf:PageroExtension>
                      <puf:ResponseExtension>
-                        <!-- Third party documentId, needed for Payment Report -->
-                        <puf:RestrictedInformation>
-                           <puf:Key>documentId</puf:Key>
-                           <puf:Value>93c567h8d5g9e07i86h5916f</puf:Value>
-                        </puf:RestrictedInformation>
                         
                         <!-- The interchange id of the referenced document. If sent by the issuer -->
                         <puf:ReferencedDocumentInterchangeID>
