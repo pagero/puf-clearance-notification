@@ -48,13 +48,7 @@
                <ext:ExtensionURI>urn:pagero:ExtensionComponent:1.0:PageroExtension:ResponseExtension</ext:ExtensionURI>
                <ext:ExtensionContent>
                   <puf:PageroExtension>
-                     <puf:ResponseExtension>
-                        <!-- Third party documentId, needed for Payment Report -->
-                        <puf:RestrictedInformation>
-                           <puf:Key>documentId</puf:Key>
-                           <puf:Value>71a345f6b3e7c85g64f3694d</puf:Value>
-                        </puf:RestrictedInformation>
-                        
+                     <puf:ResponseExtension>                        
                         <!-- The interchange id of the referenced document. If sent by the issuer -->
                         <puf:ReferencedDocumentInterchangeID>
                            <cbc:ID>123457</cbc:ID>
