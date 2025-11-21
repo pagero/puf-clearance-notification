@@ -58,6 +58,11 @@
                                    <puf:Key>acquisitionDate</puf:Key>
                                    <puf:Value>2025-11-10T11:59:00.3189919+00:00</puf:Value>
                                 </puf:RestrictedInformation>
+                                <!-- Date of receipt of the invoice in the KSeF system (for further processing). -->
+                                <puf:RestrictedInformation>
+                                   <puf:Key>invoicingDate</puf:Key>
+                                   <puf:Value>2025-11-10T11:57:04.6705228+00:00</puf:Value>
+                                </puf:RestrictedInformation>
                                 <!-- Download address for the UPO. Access is via the method HTTP GET, and no access token should be sent. 
                                 The link expires after a specified time which is provided in 'UpoDownloadUrlExpirationDate'. -->
                                 <puf:RestrictedInformation>
