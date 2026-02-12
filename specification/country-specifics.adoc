@@ -23,6 +23,11 @@ NOTE: Refer to the example files to see typical values that can be provided in e
 |===
 |Country |Clearance notification |Tax report notification|Comment
 
+|France
+|*Yes*
+|*TBA*  
+|*Applicable for the 2026 mandate.*
+
 |Greece
 |*Yes*
 |-
