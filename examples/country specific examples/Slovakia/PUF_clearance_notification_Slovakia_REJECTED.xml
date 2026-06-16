@@ -6,33 +6,39 @@
     xmlns:puf="urn:pagero:ExtensionComponent:1.0">
 
     <!--
-        UAE Clearance Notification - REJECTED
+        Slovakia Clearance/Status Notification - REJECTED
 
-        This example represents a negative (rejected) clearance response received from the
-        UAE e-Invoicing system (Ministry of Finance). The source format is a Peppol Message
-        Level Status (MLS) ApplicationResponse that is transformed into PUF Clearance
-        Notification format.
+        Slovakia operates a Peppol 5-corner model (mandatory B2B e-invoicing and e-reporting
+        from 1 January 2027; voluntary earlier). Invoices are exchanged over the 4-corner Peppol
+        network and the invoice data is reported in near real time to the Financial Directorate
+        of the Slovak Republic (the 5th corner / national Peppol authority) via the IS EFA system.
+
+        This example represents a negative acknowledgement (report/transport rejected),
+        derived from a Peppol Message Level Status (MLS) ApplicationResponse and transformed
+        into the PUF Clearance Notification format.
 
         MLS BT mapping:
-        - BT-003 (Message Identifier)          -> cbc:ID
-        - BT-004 (Issue Date)                   -> cbc:IssueDate
-        - BT-005 (Issue Time)                   -> cbc:IssueTime
-        - BT-006/BT-007 (Sender Endpoint)      -> cac:SenderParty
-        - BT-008/BT-009 (Receiver Endpoint)     -> cac:ReceiverParty
-        - BT-010 (Overall response code)        -> cbc:ResponseCode (mapped to PUF codes)
-        - BT-011 (Overall response description) -> cbc:Description (when present)
-        - BG-001/BG-002 (Line issues)           -> cac:Status elements
+        - BT-003 (Message Identifier)           -> cbc:ID
+        - BT-004 (Issue Date)                    -> cbc:IssueDate
+        - BT-005 (Issue Time)                    -> cbc:IssueTime
+        - BT-006/BT-007 (Sender Endpoint)        -> cac:SenderParty
+        - BT-008/BT-009 (Receiver Endpoint)      -> cac:ReceiverParty
+        - BT-010 (Overall response code)         -> cbc:ResponseCode (MLS "RE" -> PUF "REJECTED")
+        - BT-011 (Overall response description)  -> cbc:Description (when present)
+        - BG-001/BG-002 (Line issues)            -> cac:Status elements
 
         MLS issue mapping:
-        - BT-013 (Issue location)               -> Included in cbc:StatusReason text
-        - BT-014 (Issue description)            -> cbc:StatusReason
-        - BT-015 (Issue classification)         -> cbc:StatusReasonCode
+        - BT-013 (Issue location)                -> Included in cbc:StatusReason text
+        - BT-014 (Issue description)             -> cbc:StatusReason
+        - BT-015 (Issue classification)          -> cbc:StatusReasonCode
 
-        MLS issue classification codes (BT-015):
+        MLS issue classification codes (BT-015), standard Peppol values:
         - BV = Business rule violation, fatal
         - BW = Business rule violation, warning
         - FD = Failure of delivery
         - SV = Syntax violation
+
+        All identifiers, names and references are example/anonymised data.
     -->
 
     <!-- CustomizationID. Specification identification -->
@@ -42,27 +48,28 @@
     <cbc:ProfileID>urn:pagero.com:puf:clearance_notification:1.0</cbc:ProfileID>
 
     <!-- Response identifier. Corresponds to MLS BT-003 (Message Identifier). -->
-    <cbc:ID>f9e8d7c6-b5a4-3210-fedc-ba9876543210</cbc:ID>
+    <cbc:ID>7c2a9d4e-1b3f-4a56-8c7d-9e0f1a2b3c4d</cbc:ID>
 
     <!-- Issue date of the MLS response. Corresponds to MLS BT-004 (Issue Date). -->
-    <cbc:IssueDate>2026-05-04</cbc:IssueDate>
+    <cbc:IssueDate>2026-03-16</cbc:IssueDate>
 
     <!-- Issue time of the MLS response. Corresponds to MLS BT-005 (Issue Time). -->
-    <cbc:IssueTime>09:22:45</cbc:IssueTime>
+    <cbc:IssueTime>08:47:33</cbc:IssueTime>
 
-    <!-- cac:SenderParty. The UAE e-Invoicing system (MoF). -->
+    <!-- cac:SenderParty. The Slovak e-invoicing/e-reporting authority (5th corner). -->
     <cac:SenderParty>
         <cac:PartyName>
-            <cbc:Name>UAE Ministry of Finance</cbc:Name>
+            <cbc:Name>Slovak Tax Authority</cbc:Name>
         </cac:PartyName>
     </cac:SenderParty>
 
-    <!-- cac:ReceiverParty. The taxpayer who submitted the invoice.
-         MLS BT-008 (Receiver Party Endpoint ID) and BT-009 (Scheme ID). -->
+    <!-- cac:ReceiverParty. The taxpayer who submitted the invoice (the supplier).
+         MLS BT-008 (Receiver Party Endpoint ID) and BT-009 (Scheme ID).
+         Peppol EAS 0158 (Slovak ICO). -->
     <cac:ReceiverParty>
-        <cbc:EndpointID schemeID="AE:TIN">1234567890</cbc:EndpointID>
+        <cbc:EndpointID schemeID="0158">36045612</cbc:EndpointID>
         <cac:PartyLegalEntity>
-            <cbc:RegistrationName>Emirates Trading Company LLC</cbc:RegistrationName>
+            <cbc:RegistrationName>Dunaj Dodavatel s.r.o.</cbc:RegistrationName>
         </cac:PartyLegalEntity>
     </cac:ReceiverParty>
 
@@ -105,27 +112,25 @@
                  - cbc:StatusReason     = MLS BT-014 (Issue description), prefixed with BT-013 (Issue location) when available
             -->
 
-            <!-- Issue 1: Business rule violation -->
+            <!-- Issue 1: Business rule violation, fatal -->
             <cac:Status>
-                <!-- StatusReasonCode from MLS BT-015 (Issue classification) -->
                 <cbc:StatusReasonCode>BV</cbc:StatusReasonCode>
-                <!-- StatusReason from MLS BT-014 (Issue description) with BT-013 (Issue location) -->
-                <cbc:StatusReason>[/Invoice/cac:TaxTotal/cac:TaxSubtotal] Tax amount does not match the calculated value based on taxable amount and tax rate.</cbc:StatusReason>
+                <cbc:StatusReason>[/Invoice/cac:TaxTotal/cac:TaxSubtotal] VAT category tax amount does not match the taxable amount multiplied by the VAT rate.</cbc:StatusReason>
             </cac:Status>
 
             <!-- Issue 2: Syntax violation -->
             <cac:Status>
                 <cbc:StatusReasonCode>SV</cbc:StatusReasonCode>
-                <cbc:StatusReason>[/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID] Seller Tax Registration Number (TRN) is missing or has an invalid format.</cbc:StatusReason>
+                <cbc:StatusReason>[/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID] Seller VAT identifier (IC DPH) is missing or has an invalid format (expected SK followed by 10 digits).</cbc:StatusReason>
             </cac:Status>
 
         </cac:Response>
 
         <cac:DocumentReference>
             <!-- Reference to the invoice (invoice number) -->
-            <cbc:ID>INV-2026-001235</cbc:ID>
+            <cbc:ID>SK-2026-00043</cbc:ID>
             <!-- The date when the invoice was issued -->
-            <cbc:IssueDate>2026-05-03</cbc:IssueDate>
+            <cbc:IssueDate>2026-03-15</cbc:IssueDate>
             <!-- DocumentTypeCode. The invoice type code of the referenced invoice -->
             <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
         </cac:DocumentReference>
