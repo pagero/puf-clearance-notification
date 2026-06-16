@@ -6,20 +6,26 @@
     xmlns:puf="urn:pagero:ExtensionComponent:1.0">
 
     <!--
-        UAE Clearance Notification - APPROVED
+        Slovakia Clearance/Status Notification - APPROVED
 
-        This example represents a positive (approved) clearance response received from the
-        UAE e-Invoicing system (Ministry of Finance). The source format is a Peppol Message
-        Level Status (MLS) ApplicationResponse that is transformed into PUF Clearance
-        Notification format.
+        Slovakia operates a Peppol 5-corner model (mandatory B2B e-invoicing and e-reporting
+        from 1 January 2027; voluntary earlier). Invoices are exchanged over the 4-corner Peppol
+        network and the invoice data is reported in near real time to the Financial Directorate
+        of the Slovak Republic (the 5th corner / national Peppol authority) via the IS EFA system.
+
+        As in the Peppol model, the acknowledgement that flows back is a Peppol Message Level
+        Status (MLS) ApplicationResponse, transformed into the PUF Clearance Notification format.
+        This example represents a positive acknowledgement (report/transport accepted).
 
         MLS BT mapping:
-        - BT-003 (Message Identifier)          -> cbc:ID
-        - BT-004 (Issue Date)                   -> cbc:IssueDate
-        - BT-005 (Issue Time)                   -> cbc:IssueTime
-        - BT-006/BT-007 (Sender Endpoint)      -> cac:SenderParty
-        - BT-008/BT-009 (Receiver Endpoint)     -> cac:ReceiverParty
-        - BT-010 (Overall response code)        -> cbc:ResponseCode (mapped to PUF codes)
+        - BT-003 (Message Identifier)           -> cbc:ID
+        - BT-004 (Issue Date)                    -> cbc:IssueDate
+        - BT-005 (Issue Time)                    -> cbc:IssueTime
+        - BT-006/BT-007 (Sender Endpoint)        -> cac:SenderParty
+        - BT-008/BT-009 (Receiver Endpoint)      -> cac:ReceiverParty
+        - BT-010 (Overall response code)         -> cbc:ResponseCode (MLS "AP" -> PUF "APPROVED")
+
+        All identifiers, names and references are example/anonymised data.
     -->
 
     <!-- CustomizationID. Specification identification -->
@@ -29,27 +35,28 @@
     <cbc:ProfileID>urn:pagero.com:puf:clearance_notification:1.0</cbc:ProfileID>
 
     <!-- Response identifier. Corresponds to MLS BT-003 (Message Identifier). -->
-    <cbc:ID>a1b2c3d4-e5f6-7890-abcd-ef1234567890</cbc:ID>
+    <cbc:ID>5b1f2e3a-4c6d-7e89-a0b1-c2d3e4f5a6b7</cbc:ID>
 
     <!-- Issue date of the MLS response. Corresponds to MLS BT-004 (Issue Date). -->
-    <cbc:IssueDate>2026-05-04</cbc:IssueDate>
+    <cbc:IssueDate>2026-03-16</cbc:IssueDate>
 
     <!-- Issue time of the MLS response. Corresponds to MLS BT-005 (Issue Time). -->
-    <cbc:IssueTime>09:15:30</cbc:IssueTime>
+    <cbc:IssueTime>08:41:12</cbc:IssueTime>
 
-    <!-- cac:SenderParty. The UAE e-Invoicing system (MoF). -->
+    <!-- cac:SenderParty. The Slovak e-invoicing/e-reporting authority (5th corner). -->
     <cac:SenderParty>
         <cac:PartyName>
-            <cbc:Name>UAE Ministry of Finance</cbc:Name>
+            <cbc:Name>Slovak Tax Authority</cbc:Name>
         </cac:PartyName>
     </cac:SenderParty>
 
-    <!-- cac:ReceiverParty. The taxpayer who submitted the invoice.
-         MLS BT-008 (Receiver Party Endpoint ID) and BT-009 (Scheme ID). -->
+    <!-- cac:ReceiverParty. The taxpayer who submitted the invoice (the supplier).
+         MLS BT-008 (Receiver Party Endpoint ID) and BT-009 (Scheme ID).
+         Peppol EAS 0158 (Slovak ICO). -->
     <cac:ReceiverParty>
-        <cbc:EndpointID schemeID="AE:TIN">1234567890</cbc:EndpointID>
+        <cbc:EndpointID schemeID="0158">36045612</cbc:EndpointID>
         <cac:PartyLegalEntity>
-            <cbc:RegistrationName>Emirates Trading Company LLC</cbc:RegistrationName>
+            <cbc:RegistrationName>Dunaj Dodavatel s.r.o.</cbc:RegistrationName>
         </cac:PartyLegalEntity>
     </cac:ReceiverParty>
 
@@ -87,9 +94,9 @@
 
         <cac:DocumentReference>
             <!-- Reference to the invoice (invoice number) -->
-            <cbc:ID>INV-2026-001234</cbc:ID>
+            <cbc:ID>SK-2026-00042</cbc:ID>
             <!-- The date when the invoice was issued -->
-            <cbc:IssueDate>2026-05-03</cbc:IssueDate>
+            <cbc:IssueDate>2026-03-15</cbc:IssueDate>
             <!-- DocumentTypeCode. The invoice type code of the referenced invoice -->
             <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
         </cac:DocumentReference>
