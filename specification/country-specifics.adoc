@@ -25,7 +25,7 @@ NOTE: Refer to the example files to see typical values that can be provided in e
 
 |France
 |*Yes*
-|*TBA*  
+|*Yes*
 |*Applicable for the 2026 mandate.*
 
 |Greece

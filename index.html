@@ -582,6 +582,11 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#_pufresponseextension">puf:ResponseExtension</a></li>
 </ul>
 </li>
+<li><a href="#_document_reference_extension">Document reference extension</a>
+<ul class="sectlevel3">
+<li><a href="#_pufdocumentreferenceextension">puf:DocumentReferenceExtension</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#_country_specifics">5. Country specifics</a>
@@ -1339,35 +1344,38 @@ The description of the clarification given for the notification status.</p></td>
         <span class="tag">&lt;ext:UBLExtension&gt;</span>
           <span class="tag">&lt;ext:ExtensionURI&gt;</span>urn:pagero:ExtensionComponent:1.0:PageroExtension:ResponseExtension<span class="tag">&lt;/ext:ExtensionURI&gt;</span>
           <span class="tag">&lt;ext:ExtensionContent&gt;</span>
-              <span class="tag">&lt;puf:PageroExtension&gt;</span>
-                <span class="tag">&lt;puf:ResponseExtension&gt;</span>
-                  <span class="tag">&lt;puf:ReferencedDocumentInterchangeID&gt;</span>
-                    <span class="tag">&lt;cbc:ID&gt;</span>123456789<span class="tag">&lt;/cbc:ID&gt;</span>
-                  <span class="tag">&lt;/puf:ReferencedDocumentInterchangeID&gt;</span>
-                  <span class="tag">&lt;puf:ClearanceReferenceID&gt;</span>
-                    <span class="tag">&lt;cbc:ID&gt;</span>4543f3ed-8c20-4eee-a19f-486025fe2773<span class="tag">&lt;/cbc:ID&gt;</span>
-                  <span class="tag">&lt;/puf:ClearanceReferenceID&gt;</span>
-                  <span class="tag">&lt;puf:ClearanceQR&gt;</span>
-                    <span class="tag">&lt;puf:QRString&gt;</span>VGhlIFFSIENvZGU=<span class="tag">&lt;/puf:QRString&gt;</span>
-                  <span class="tag">&lt;/puf:ClearanceQR&gt;</span>
-                  <span class="tag">&lt;puf:AdditionalDocumentReference&gt;</span>
-                    <span class="tag">&lt;cbc:ID&gt;</span>1456123<span class="tag">&lt;/cbc:ID&gt;</span>
-                    <span class="tag">&lt;cbc:DocumentTypeCode&gt;</span>M<span class="tag">&lt;/cbc:DocumentTypeCode&gt;</span>
-                    <span class="tag">&lt;cbc:DocumentDescription&gt;</span>LCD<span class="tag">&lt;/cbc:DocumentDescription&gt;</span>
-                    <span class="tag">&lt;cac:Attachment&gt;</span>
-                      <span class="tag">&lt;cbc:EmbeddedDocumentBinaryObject</span> <span class="attribute-name">filename</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">123456789_12345.xml</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">mimeCode</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">application/xml</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>U29tZSBkb2N1bWVudA==<span class="tag">&lt;/cbc:EmbeddedDocumentBinaryObject&gt;</span>
-                    <span class="tag">&lt;/cac:Attachment&gt;</span>
-                  <span class="tag">&lt;/puf:AdditionalDocumentReference&gt;</span>
-                <span class="tag">&lt;/puf:ResponseExtension&gt;</span>
-              <span class="tag">&lt;/puf:PageroExtension&gt;</span>
+            <span class="tag">&lt;puf:PageroExtension&gt;</span>
+              <span class="tag">&lt;puf:ResponseExtension&gt;</span>
+                <span class="tag">&lt;puf:ReferencedDocumentInterchangeID&gt;</span>
+                  <span class="tag">&lt;cbc:ID&gt;</span>123456789<span class="tag">&lt;/cbc:ID&gt;</span>
+                <span class="tag">&lt;/puf:ReferencedDocumentInterchangeID&gt;</span>
+                <span class="tag">&lt;puf:ClearanceReferenceID&gt;</span>
+                  <span class="tag">&lt;cbc:ID&gt;</span>4543f3ed-8c20-4eee-a19f-486025fe2773<span class="tag">&lt;/cbc:ID&gt;</span>
+                <span class="tag">&lt;/puf:ClearanceReferenceID&gt;</span>
+                <span class="tag">&lt;puf:ClearanceQR&gt;</span>
+                  <span class="tag">&lt;puf:QRString&gt;</span>VGhlIFFSIENvZGU=<span class="tag">&lt;/puf:QRString&gt;</span>
+                <span class="tag">&lt;/puf:ClearanceQR&gt;</span>
+                <span class="tag">&lt;puf:AdditionalDocumentReference&gt;</span>
+                  <span class="tag">&lt;cbc:ID&gt;</span>1456123<span class="tag">&lt;/cbc:ID&gt;</span>
+                  <span class="tag">&lt;cbc:DocumentTypeCode&gt;</span>M<span class="tag">&lt;/cbc:DocumentTypeCode&gt;</span>
+                  <span class="tag">&lt;cbc:DocumentDescription&gt;</span>LCD<span class="tag">&lt;/cbc:DocumentDescription&gt;</span>
+                  <span class="tag">&lt;cac:Attachment&gt;</span>
+                    <span class="tag">&lt;cbc:EmbeddedDocumentBinaryObject</span> <span class="attribute-name">filename</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">123456789_12345.xml</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">mimeCode</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">application/xml</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>U29tZSBkb2N1bWVudA==<span class="tag">&lt;/cbc:EmbeddedDocumentBinaryObject&gt;</span>
+                  <span class="tag">&lt;/cac:Attachment&gt;</span>
+                <span class="tag">&lt;/puf:AdditionalDocumentReference&gt;</span>
+              <span class="tag">&lt;/puf:ResponseExtension&gt;</span>
+            <span class="tag">&lt;/puf:PageroExtension&gt;</span>
           <span class="tag">&lt;/ext:ExtensionContent&gt;</span>
-      <span class="tag">&lt;ext:UBLExtensions&gt;</span>
+        <span class="tag">&lt;/ext:UBLExtension&gt;</span>
+      <span class="tag">&lt;/ext:UBLExtensions&gt;</span>
       <span class="tag">&lt;cbc:ResponseCode&gt;</span>APPROVED<span class="tag">&lt;/cbc:ResponseCode&gt;</span>
-        <span class="tag">&lt;cac:Status&gt;</span>
-            <span class="tag">&lt;cbc:StatusReasonCode&gt;</span>XSD_ZATCA_VALID<span class="tag">&lt;/cbc:StatusReasonCode&gt;</span>
-            <span class="tag">&lt;cbc:StatusReason&gt;</span>Complied with UBL 2.1 standards in line with ZATCA specifications<span class="tag">&lt;/cbc:StatusReason&gt;</span>
-        <span class="tag">&lt;/cac:Status&gt;</span>
+      <span class="tag">&lt;cac:Status&gt;</span>
+        <span class="tag">&lt;cbc:StatusReasonCode&gt;</span>XSD_ZATCA_VALID<span class="tag">&lt;/cbc:StatusReasonCode&gt;</span>
+        <span class="tag">&lt;cbc:StatusReason&gt;</span>Complied with UBL 2.1 standards in line with ZATCA specifications<span class="tag">&lt;/cbc:StatusReason&gt;</span>
+      <span class="tag">&lt;/cac:Status&gt;</span>
     <span class="tag">&lt;/cac:Response&gt;</span>
+    <span class="comment">&lt;!-- Code omitted for clarity --&gt;</span>
+  <span class="tag">&lt;/cac:DocumentResponse&gt;</span>
   <span class="comment">&lt;!-- Code omitted for clarity --&gt;</span>
 <span class="tag">&lt;/ApplicationResponse&gt;</span></code></pre>
 </div>
@@ -1391,7 +1399,9 @@ The description of the clarification given for the notification status.</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>cbc:ID</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Document identifier</strong><br>
-Identifer of the referenced document (e.g. invoice number).</p></td>
+Identifer of the referenced document (e.g. invoice number).<br>
+In a tax data reporting process this is the tax report identifier assigned by the issuer.<br>
+<em>The element may be sent empty, see <a href="#_aggregated_tax_reports">Aggregated tax reports</a>.</em></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>cbc:IssueDate</code></p></td>
@@ -1403,7 +1413,8 @@ The date on which the referenced document was issued.<br>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>cbc:DocumentTypeCode</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Document type code</strong><br>
 Type code of the referenced document (e.g. 380 = Invoice, 381 = Credit note etc.).
-For valid values see code list <a href="https://pagero.github.io/puf-code-lists/#_puf_019_documentreferencedoctypecode" target="_blank" rel="noopener">PUF-019-DOCUMENTREFERENCEDOCTYPECODE</a>.</p></td>
+For valid values see code list <a href="https://pagero.github.io/puf-code-lists/#<em>puf_019_documentreferencedoctypecode" target="_blank" rel="noopener">PUF-019-DOCUMENTREFERENCEDOCTYPECODE</a>.<br>
+_The element is not used for aggregated tax reports, see <a href="#_aggregated_tax_reports">Aggregated tax reports</a>.</em></p></td>
 </tr>
 </tbody>
 </table>
@@ -1418,15 +1429,70 @@ For valid values see code list <a href="https://pagero.github.io/puf-code-lists/
   <span class="tag">&lt;cac:DocumentResponse&gt;</span>
     <span class="tag">&lt;cac:Response&gt;</span>
       <span class="comment">&lt;!-- Code omitted for clarity --&gt;</span>
-      <span class="tag">&lt;cac:DocumentReference&gt;</span>
-            <span class="tag">&lt;cbc:ID&gt;</span>INV002<span class="tag">&lt;/cbc:ID&gt;</span>
-            <span class="tag">&lt;cbc:IssueDate&gt;</span>2022-09-07<span class="tag">&lt;/cbc:IssueDate&gt;</span>
-            <span class="tag">&lt;cbc:DocumentTypeCode&gt;</span>380<span class="tag">&lt;/cbc:DocumentTypeCode&gt;</span>
-        <span class="tag">&lt;/cac:DocumentReference&gt;</span>
-      <span class="comment">&lt;!-- Code omitted for clarity --&gt;</span>
     <span class="tag">&lt;/cac:Response&gt;</span>
+    <span class="tag">&lt;cac:DocumentReference&gt;</span>
+      <span class="tag">&lt;cbc:ID&gt;</span>INV002<span class="tag">&lt;/cbc:ID&gt;</span>
+      <span class="tag">&lt;cbc:IssueDate&gt;</span>2022-09-07<span class="tag">&lt;/cbc:IssueDate&gt;</span>
+      <span class="tag">&lt;cbc:DocumentTypeCode&gt;</span>380<span class="tag">&lt;/cbc:DocumentTypeCode&gt;</span>
+    <span class="tag">&lt;/cac:DocumentReference&gt;</span>
+  <span class="tag">&lt;/cac:DocumentResponse&gt;</span>
   <span class="comment">&lt;!-- Code omitted for clarity --&gt;</span>
 <span class="tag">&lt;/ApplicationResponse&gt;</span></code></pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_aggregated_tax_reports"><a class="anchor" href="#_aggregated_tax_reports"></a><a class="link" href="#_aggregated_tax_reports">Aggregated tax reports</a></h5>
+<div class="paragraph">
+<p>In a tax data reporting process the issuer may send several tax reports that are aggregated into one report to the authority. The authority answers with a single response, which is then reported back to the issuer as one <code>cac:DocumentResponse</code> holding one <code>cac:DocumentReference</code> per tax report included in the aggregated report.</p>
+</div>
+<div class="paragraph">
+<p>The handling described here applies only when Pagero performs the aggregation, that is when several tax reports sent by the issuer are combined by Pagero into one report to the authority. It does not apply to a report that the issuer itself has aggregated before sending it to Pagero, which is reported back as one single document reference. Currently only applicable for France.</p>
+</div>
+<div class="paragraph">
+<p>The response as a whole is described in <code>cac:Response</code>, and applies to every referenced tax report. Information specific to an individual tax report is given in that tax report&#8217;s own <code>cac:DocumentReference</code>.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<code>cbc:ID</code> holds the tax report identifier assigned by the issuer, and is the only identifier that can be used to modify or replace the tax report later. When the issuer did not assign an identifier, <code>cbc:ID</code> is sent empty. An empty <code>cbc:ID</code> therefore means that no issuer identifier was supplied for that tax report - it is not an error, but the tax report cannot be referenced in a later modification or replacement. The identifiers given in <a href="#_document_reference_extension">Document reference extension</a> are provided so the issuer can recognise the tax report, and must not be used in place of <code>cbc:ID</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The identifier of the aggregated report itself is given in <code>puf:AggregatedReportID</code>, see <a href="#_response_extension">Response extension</a>. That identifier must be used when a rectification or replace period process is performed for the aggregated report.</p>
+</div>
+<div class="paragraph">
+<p><code>cbc:DocumentTypeCode</code> is not used for aggregated tax reports. Its code list describes invoice types, and the referenced documents are tax reports rather than invoices.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example</strong><br>
+<em>cac:DocumentResponse referencing two aggregated tax reports, where the second one was sent without an issuer assigned identifier</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;ApplicationResponse&gt;</span>
+  <span class="comment">&lt;!-- Code omitted for clarity --&gt;</span>
+  <span class="tag">&lt;cac:DocumentResponse&gt;</span>
+    <span class="tag">&lt;cac:Response&gt;</span>
+      <span class="comment">&lt;!-- Code omitted for clarity --&gt;</span>
+    <span class="tag">&lt;/cac:Response&gt;</span>
+    <span class="tag">&lt;cac:DocumentReference&gt;</span>
+      <span class="tag">&lt;cbc:ID&gt;</span>TAXREPORT001<span class="tag">&lt;/cbc:ID&gt;</span>
+      <span class="tag">&lt;cbc:IssueDate&gt;</span>2022-09-07<span class="tag">&lt;/cbc:IssueDate&gt;</span>
+    <span class="tag">&lt;/cac:DocumentReference&gt;</span>
+    <span class="tag">&lt;cac:DocumentReference&gt;</span>
+      <span class="tag">&lt;cbc:ID</span><span class="tag">/&gt;</span>
+      <span class="tag">&lt;cbc:IssueDate&gt;</span>2022-09-07<span class="tag">&lt;/cbc:IssueDate&gt;</span>
+    <span class="tag">&lt;/cac:DocumentReference&gt;</span>
+  <span class="tag">&lt;/cac:DocumentResponse&gt;</span>
+  <span class="comment">&lt;!-- Code omitted for clarity --&gt;</span>
+<span class="tag">&lt;/ApplicationResponse&gt;</span></code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -1475,9 +1541,18 @@ Value relevant to the assigned key.</p></td>
 The interchange id of the referenced document (if sent by the issuer).</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>puf:AggregatedReportID/cbc:ID</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aggregated report ID</strong><br>
+The identifier of the aggregated report as created by Pagero.<br>
+<em>Only used when the response covers several tax reports, see <a href="#_document_reference_extension">Document reference extension</a>.</em><br>
+<em>The element refers to an aggregation performed by Pagero, where several tax reports sent by the issuer are combined into one report to the authority. It does not refer to a report that the issuer itself has aggregated before sending it to Pagero. Currently only applicable for France.</em><br>
+<em>The identifier must be used when a rectification or replace period process is performed for the aggregated report.</em></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>puf:AuthorityDeliveryDateTime</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Authority delivery date and time</strong><br>
-The date and time the tax report was sent to the authority.</p></td>
+The date and time the tax report was sent to the authority.<br>
+<em>When the response covers several tax reports, the date and time applies to the aggregated report as a whole.</em></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>puf:ClearanceReferenceID/cbc:ID</code></p></td>
@@ -1554,6 +1629,9 @@ The attached document embedded as binary object (Base64).</p></td>
                   <span class="tag">&lt;puf:ReferencedDocumentInterchangeID&gt;</span>
                     <span class="tag">&lt;cbc:ID&gt;</span>123456789<span class="tag">&lt;/cbc:ID&gt;</span>
                   <span class="tag">&lt;/puf:ReferencedDocumentInterchangeID&gt;</span>
+                  <span class="tag">&lt;puf:AggregatedReportID&gt;</span>
+                    <span class="tag">&lt;cbc:ID&gt;</span>000000000000015<span class="tag">&lt;/cbc:ID&gt;</span>
+                  <span class="tag">&lt;/puf:AggregatedReportID&gt;</span>
                   <span class="tag">&lt;puf:AuthorityDeliveryDateTime&gt;</span>2025-01-01T18:00:00.000Z<span class="tag">&lt;/puf:AuthorityDeliveryDateTime&gt;</span>
                   <span class="tag">&lt;puf:ClearanceReferenceID&gt;</span>
                     <span class="tag">&lt;cbc:ID&gt;</span>4543f3ed-8c20-4eee-a19f-486025fe2773<span class="tag">&lt;/cbc:ID&gt;</span>
@@ -1575,6 +1653,114 @@ The attached document embedded as binary object (Base64).</p></td>
         <span class="tag">&lt;/ext:UBLExtension&gt;</span>
       <span class="tag">&lt;ext:UBLExtensions&gt;</span>
     <span class="tag">&lt;/cac:Response&gt;</span>
+  <span class="comment">&lt;!-- Code omitted for clarity --&gt;</span>
+<span class="tag">&lt;/ApplicationResponse&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_document_reference_extension"><a class="anchor" href="#_document_reference_extension"></a><a class="link" href="#_document_reference_extension">Document reference extension</a></h3>
+<div class="paragraph">
+<p>Below chapter describes the elements added in <code>cac:DocumentResponse/cac:DocumentReference/ext:UBLExtensions</code>.</p>
+</div>
+<div class="sect3">
+<h4 id="_pufdocumentreferenceextension"><a class="anchor" href="#_pufdocumentreferenceextension"></a><a class="link" href="#_pufdocumentreferenceextension">puf:DocumentReferenceExtension</a></h4>
+<div class="paragraph">
+<p>Below table shows the definition of elements added to the extension <code>puf:PageroExtension/puf:DocumentReferenceExtension</code>.</p>
+</div>
+<div class="paragraph">
+<p>The extension holds information that relates to one single referenced document, and is therefore given in that document&#8217;s own <code>cac:DocumentReference</code>. It is used when the response covers several documents, for example when several tax reports sent by the issuer are aggregated into one report to the authority. Information that applies to the response as a whole is given in <code>puf:ResponseExtension</code> instead.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+The identifiers below are provided so the issuer can recognise the referenced document. They must not be used in place of <code>cbc:ID</code> in <code>cac:DocumentReference</code>, which holds the identifier assigned by the issuer and is the only identifier that can be used to modify or replace the document later.
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 7. Elements added in puf:DocumentReferenceExtension</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Element</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>puf:RestrictedInformation/puf:Key</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Key</strong><br>
+Key defining the type of value.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>puf:RestrictedInformation/puf:Value</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Value</strong><br>
+Value relevant to the assigned key.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>puf:ReferencedDocumentInterchangeID/cbc:ID</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Referenced document unique ID</strong><br>
+The interchange id or filename of the referenced document (if sent by the issuer).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>puf:IssuerAssignedReportID/cbc:ID</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Issuer assigned report ID</strong><br>
+An additional identifier or name of the referenced document, assigned by the issuer.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>See example below as well as the URI to be used for this extension.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example</strong><br>
+<em>puf:DocumentReferenceExtension with sample values.</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;ApplicationResponse&gt;</span>
+  <span class="comment">&lt;!-- Code omitted for clarity --&gt;</span>
+  <span class="tag">&lt;cac:DocumentResponse&gt;</span>
+    <span class="tag">&lt;cac:Response&gt;</span>
+      <span class="comment">&lt;!-- Code omitted for clarity --&gt;</span>
+    <span class="tag">&lt;/cac:Response&gt;</span>
+    <span class="tag">&lt;cac:DocumentReference&gt;</span>
+      <span class="tag">&lt;ext:UBLExtensions&gt;</span>
+        <span class="tag">&lt;ext:UBLExtension&gt;</span>
+          <span class="tag">&lt;ext:ExtensionURI&gt;</span>urn:pagero:ExtensionComponent:1.0:PageroExtension:DocumentReferenceExtension<span class="tag">&lt;/ext:ExtensionURI&gt;</span>
+          <span class="tag">&lt;ext:ExtensionContent&gt;</span>
+            <span class="tag">&lt;puf:PageroExtension&gt;</span>
+              <span class="tag">&lt;puf:DocumentReferenceExtension&gt;</span>
+                <span class="tag">&lt;puf:RestrictedInformation&gt;</span>
+                  <span class="tag">&lt;puf:Key&gt;</span>TheKey<span class="tag">&lt;/puf:Key&gt;</span>
+                  <span class="tag">&lt;puf:Value&gt;</span>TheValue<span class="tag">&lt;/puf:Value&gt;</span>
+                <span class="tag">&lt;/puf:RestrictedInformation&gt;</span>
+                <span class="tag">&lt;puf:ReferencedDocumentInterchangeID&gt;</span>
+                  <span class="tag">&lt;cbc:ID&gt;</span>TaxReport_202207.xml<span class="tag">&lt;/cbc:ID&gt;</span>
+                <span class="tag">&lt;/puf:ReferencedDocumentInterchangeID&gt;</span>
+                <span class="tag">&lt;puf:IssuerAssignedReportID&gt;</span>
+                  <span class="tag">&lt;cbc:ID&gt;</span>MonthlyReportJuly<span class="tag">&lt;/cbc:ID&gt;</span>
+                <span class="tag">&lt;/puf:IssuerAssignedReportID&gt;</span>
+              <span class="tag">&lt;/puf:DocumentReferenceExtension&gt;</span>
+            <span class="tag">&lt;/puf:PageroExtension&gt;</span>
+          <span class="tag">&lt;/ext:ExtensionContent&gt;</span>
+        <span class="tag">&lt;/ext:UBLExtension&gt;</span>
+      <span class="tag">&lt;/ext:UBLExtensions&gt;</span>
+      <span class="tag">&lt;cbc:ID&gt;</span>TAXREPORT001<span class="tag">&lt;/cbc:ID&gt;</span>
+      <span class="tag">&lt;cbc:IssueDate&gt;</span>2022-09-07<span class="tag">&lt;/cbc:IssueDate&gt;</span>
+    <span class="tag">&lt;/cac:DocumentReference&gt;</span>
+    <span class="comment">&lt;!-- Code omitted for clarity --&gt;</span>
+  <span class="tag">&lt;/cac:DocumentResponse&gt;</span>
   <span class="comment">&lt;!-- Code omitted for clarity --&gt;</span>
 <span class="tag">&lt;/ApplicationResponse&gt;</span></code></pre>
 </div>
@@ -1625,7 +1811,7 @@ Refer to the example files to see typical values that can be provided in each co
 </table>
 </div>
 <table class="tableblock frame-all grid-all fit-content stretch">
-<caption class="title">Table 7. Table of supported countries</caption>
+<caption class="title">Table 8. Table of supported countries</caption>
 <colgroup>
 <col>
 <col>
@@ -1644,7 +1830,7 @@ Refer to the example files to see typical values that can be provided in each co
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">France</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Yes</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>TBA</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Yes</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Applicable for the 2026 mandate.</strong></p></td>
 </tr>
 <tr>
@@ -1724,7 +1910,7 @@ Refer to the example files to see typical values that can be provided in each co
 <div class="sect2">
 <h3 id="_code_lists_for_coded_elements"><a class="anchor" href="#_code_lists_for_coded_elements"></a><a class="link" href="#_code_lists_for_coded_elements">6.1. Code lists for coded elements</a></h3>
 <table class="tableblock frame-all grid-all fit-content stretch">
-<caption class="title">Table 8. Table of the code lists used</caption>
+<caption class="title">Table 9. Table of the code lists used</caption>
 <colgroup>
 <col>
 <col>

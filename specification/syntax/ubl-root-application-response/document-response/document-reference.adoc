@@ -4,7 +4,9 @@
 
 |`cbc:ID`
 |**Document identifier** +
-Identifer of the referenced document (e.g. invoice number).
+Identifer of the referenced document (e.g. invoice number). +
+In a tax data reporting process this is the tax report identifier assigned by the issuer. +
+_The element may be sent empty, see <<_aggregated_tax_reports>>._
 
 |`cbc:IssueDate`
 |**Issue date** +
@@ -14,7 +16,8 @@ _Format must be "YYYY-MM-DD"._
 |`cbc:DocumentTypeCode`
 |**Document type code** +
 Type code of the referenced document (e.g. 380 = Invoice, 381 = Credit note etc.).
-For valid values see code list https://pagero.github.io/puf-code-lists/#_puf_019_documentreferencedoctypecode[PUF-019-DOCUMENTREFERENCEDOCTYPECODE^].
+For valid values see code list https://pagero.github.io/puf-code-lists/#_puf_019_documentreferencedoctypecode[PUF-019-DOCUMENTREFERENCEDOCTYPECODE^]. +
+_The element is not used for aggregated tax reports, see <<_aggregated_tax_reports>>._
 
 |===
 
@@ -28,13 +31,52 @@ _cac:DocumentReference with example values_
   <cac:DocumentResponse>
     <cac:Response>
       <!-- Code omitted for clarity -->
-      <cac:DocumentReference>
-            <cbc:ID>INV002</cbc:ID>
-            <cbc:IssueDate>2022-09-07</cbc:IssueDate>
-            <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
-        </cac:DocumentReference>
+    </cac:Response>
+    <cac:DocumentReference>
+      <cbc:ID>INV002</cbc:ID>
+      <cbc:IssueDate>2022-09-07</cbc:IssueDate>
+      <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
+    </cac:DocumentReference>
+  </cac:DocumentResponse>
+  <!-- Code omitted for clarity -->
+</ApplicationResponse>
+----
+
+[#_aggregated_tax_reports]
+===== Aggregated tax reports
+
+In a tax data reporting process the issuer may send several tax reports that are aggregated into one report to the authority. The authority answers with a single response, which is then reported back to the issuer as one `cac:DocumentResponse` holding one `cac:DocumentReference` per tax report included in the aggregated report.
+
+The handling described here applies only when Pagero performs the aggregation, that is when several tax reports sent by the issuer are combined by Pagero into one report to the authority. It does not apply to a report that the issuer itself has aggregated before sending it to Pagero, which is reported back as one single document reference. Currently only applicable for France.
+
+The response as a whole is described in `cac:Response`, and applies to every referenced tax report. Information specific to an individual tax report is given in that tax report's own `cac:DocumentReference`.
+
+IMPORTANT: `cbc:ID` holds the tax report identifier assigned by the issuer, and is the only identifier that can be used to modify or replace the tax report later. When the issuer did not assign an identifier, `cbc:ID` is sent empty. An empty `cbc:ID` therefore means that no issuer identifier was supplied for that tax report - it is not an error, but the tax report cannot be referenced in a later modification or replacement. The identifiers given in <<_document_reference_extension>> are provided so the issuer can recognise the tax report, and must not be used in place of `cbc:ID`.
+
+The identifier of the aggregated report itself is given in `puf:AggregatedReportID`, see <<_response_extension>>. That identifier must be used when a rectification or replace period process is performed for the aggregated report.
+
+`cbc:DocumentTypeCode` is not used for aggregated tax reports. Its code list describes invoice types, and the referenced documents are tax reports rather than invoices.
+
+*Example* +
+_cac:DocumentResponse referencing two aggregated tax reports, where the second one was sent without an issuer assigned identifier_
+
+[source,xml]
+----
+<ApplicationResponse>
+  <!-- Code omitted for clarity -->
+  <cac:DocumentResponse>
+    <cac:Response>
       <!-- Code omitted for clarity -->
-    </cac:Response>    
+    </cac:Response>
+    <cac:DocumentReference>
+      <cbc:ID>TAXREPORT001</cbc:ID>
+      <cbc:IssueDate>2022-09-07</cbc:IssueDate>
+    </cac:DocumentReference>
+    <cac:DocumentReference>
+      <cbc:ID/>
+      <cbc:IssueDate>2022-09-07</cbc:IssueDate>
+    </cac:DocumentReference>
+  </cac:DocumentResponse>
   <!-- Code omitted for clarity -->
 </ApplicationResponse>
 ----

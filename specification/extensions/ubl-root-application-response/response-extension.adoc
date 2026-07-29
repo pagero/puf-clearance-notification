@@ -18,9 +18,17 @@ Value relevant to the assigned key.
 | **Referenced document unique ID** +
 The interchange id of the referenced document (if sent by the issuer).
 
+|`puf:AggregatedReportID/cbc:ID`
+| **Aggregated report ID** +
+The identifier of the aggregated report as created by Pagero. +
+_Only used when the response covers several tax reports, see <<_document_reference_extension>>._ +
+_The element refers to an aggregation performed by Pagero, where several tax reports sent by the issuer are combined into one report to the authority. It does not refer to a report that the issuer itself has aggregated before sending it to Pagero. Currently only applicable for France._ +
+_The identifier must be used when a rectification or replace period process is performed for the aggregated report._
+
 |`puf:AuthorityDeliveryDateTime`
 | **Authority delivery date and time** +
-The date and time the tax report was sent to the authority.
+The date and time the tax report was sent to the authority. +
+_When the response covers several tax reports, the date and time applies to the aggregated report as a whole._
 
 |`puf:ClearanceReferenceID/cbc:ID`
 |**Clearance reference ID** +
@@ -86,6 +94,9 @@ _puf:ResponseExtension with sample values._
                   <puf:ReferencedDocumentInterchangeID>
                     <cbc:ID>123456789</cbc:ID>
                   </puf:ReferencedDocumentInterchangeID>
+                  <puf:AggregatedReportID>
+                    <cbc:ID>000000000000015</cbc:ID>
+                  </puf:AggregatedReportID>
                   <puf:AuthorityDeliveryDateTime>2025-01-01T18:00:00.000Z</puf:AuthorityDeliveryDateTime>
                   <puf:ClearanceReferenceID>
                     <cbc:ID>4543f3ed-8c20-4eee-a19f-486025fe2773</cbc:ID>
