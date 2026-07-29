@@ -1,0 +1,72 @@
+==== puf:DocumentReferenceExtension
+
+Below table shows the definition of elements added to the extension `puf:PageroExtension/puf:DocumentReferenceExtension`.
+
+The extension holds information that relates to one single referenced document, and is therefore given in that document's own `cac:DocumentReference`. It is used when the response covers several documents, for example when several tax reports sent by the issuer are aggregated into one report to the authority. Information that applies to the response as a whole is given in `puf:ResponseExtension` instead.
+
+IMPORTANT: The identifiers below are provided so the issuer can recognise the referenced document. They must not be used in place of `cbc:ID` in `cac:DocumentReference`, which holds the identifier assigned by the issuer and is the only identifier that can be used to modify or replace the document later.
+
+.Elements added in puf:DocumentReferenceExtension
+|===
+|Element |Description
+
+|`puf:RestrictedInformation/puf:Key`
+|**Key** +
+Key defining the type of value.
+
+|`puf:RestrictedInformation/puf:Value`
+|**Value** +
+Value relevant to the assigned key.
+
+|`puf:ReferencedDocumentInterchangeID/cbc:ID`
+|**Referenced document unique ID** +
+The interchange id or filename of the referenced document (if sent by the issuer).
+
+|`puf:IssuerAssignedReportID/cbc:ID`
+|**Issuer assigned report ID** +
+An additional identifier or name of the referenced document, assigned by the issuer.
+
+|===
+
+See example below as well as the URI to be used for this extension.
+
+*Example* +
+_puf:DocumentReferenceExtension with sample values._
+[source,xml]
+----
+<ApplicationResponse>
+  <!-- Code omitted for clarity -->
+  <cac:DocumentResponse>
+    <cac:Response>
+      <!-- Code omitted for clarity -->
+    </cac:Response>
+    <cac:DocumentReference>
+      <ext:UBLExtensions>
+        <ext:UBLExtension>
+          <ext:ExtensionURI>urn:pagero:ExtensionComponent:1.0:PageroExtension:DocumentReferenceExtension</ext:ExtensionURI>
+          <ext:ExtensionContent>
+            <puf:PageroExtension>
+              <puf:DocumentReferenceExtension>
+                <puf:RestrictedInformation>
+                  <puf:Key>TheKey</puf:Key>
+                  <puf:Value>TheValue</puf:Value>
+                </puf:RestrictedInformation>
+                <puf:ReferencedDocumentInterchangeID>
+                  <cbc:ID>TaxReport_202207.xml</cbc:ID>
+                </puf:ReferencedDocumentInterchangeID>
+                <puf:IssuerAssignedReportID>
+                  <cbc:ID>MonthlyReportJuly</cbc:ID>
+                </puf:IssuerAssignedReportID>
+              </puf:DocumentReferenceExtension>
+            </puf:PageroExtension>
+          </ext:ExtensionContent>
+        </ext:UBLExtension>
+      </ext:UBLExtensions>
+      <cbc:ID>TAXREPORT001</cbc:ID>
+      <cbc:IssueDate>2022-09-07</cbc:IssueDate>
+    </cac:DocumentReference>
+    <!-- Code omitted for clarity -->
+  </cac:DocumentResponse>
+  <!-- Code omitted for clarity -->
+</ApplicationResponse>
+----

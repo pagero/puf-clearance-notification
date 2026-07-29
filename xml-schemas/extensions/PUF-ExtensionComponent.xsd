@@ -45,6 +45,17 @@
                                     </xsd:sequence>
                                 </xsd:complexType>
                             </xsd:element>
+
+                            <xsd:element name="AggregatedReportID" minOccurs="0" maxOccurs="1">
+                                <xsd:annotation>
+                                    <xsd:documentation>The identifier of the aggregated report as created by Pagero. Only used when the response covers several tax reports.</xsd:documentation>
+                                </xsd:annotation>
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element ref="cbc:ID" minOccurs="1" maxOccurs="1"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
                             
                             <xsd:element name="AuthorityDeliveryDateTime" type="PUFDateType" minOccurs="0" maxOccurs="1"/>
 
@@ -99,6 +110,46 @@
                                         </ccts:Component>
                                     </xsd:documentation>
                                 </xsd:annotation>
+                            </xsd:element>
+
+                            <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="1"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+
+                </xsd:element>
+
+                <xsd:element name="DocumentReferenceExtension" minOccurs="0" maxOccurs="1">
+                    <xsd:annotation>
+                        <xsd:documentation>Information that relates to one single referenced document. Used when the response covers several documents, for example when several tax reports are aggregated into one report to the authority.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="RestrictedInformation" minOccurs="0" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element ref="Key" minOccurs="1" maxOccurs="1"/>
+                                        <xsd:element ref="Value" minOccurs="1" maxOccurs="1"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+
+                            <xsd:element name="ReferencedDocumentInterchangeID" minOccurs="0" maxOccurs="1">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element ref="cbc:ID" minOccurs="1" maxOccurs="1"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+
+                            <xsd:element name="IssuerAssignedReportID" minOccurs="0" maxOccurs="1">
+                                <xsd:annotation>
+                                    <xsd:documentation>An additional identifier or name of the referenced document, assigned by the issuer.</xsd:documentation>
+                                </xsd:annotation>
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element ref="cbc:ID" minOccurs="1" maxOccurs="1"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
                             </xsd:element>
 
                             <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="1"/>
