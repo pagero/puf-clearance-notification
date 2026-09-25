@@ -34,9 +34,9 @@ _cac:ReceiverParty with example values_
 <ApplicationResponse>
   <!-- Code omitted for clarity -->
   <cac:ReceiverParty>
-      <cbc:EndpointID schemeID="0088">7310000000000</EndpointID>
+      <cbc:EndpointID schemeID="0088">7310000000000</cbc:EndpointID>
       <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Receiver party name</cbc:Name>
+        <cbc:RegistrationName>Receiver party name</cbc:RegistrationName>
       </cac:PartyLegalEntity>
   </cac:ReceiverParty>
   <!-- Code omitted for clarity -->

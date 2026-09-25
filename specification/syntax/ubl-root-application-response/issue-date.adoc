@@ -3,6 +3,7 @@
 
 |`cbc:IssueDate`
 |**Issue date of clearance notification** +
+The date of the response from the clearance authority. When the response has no date, the date on which the clearance notification was created. +
 _Format must be "YYYY-MM-DD"._
 |===
 
