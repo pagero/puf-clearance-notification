@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApplicationResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+                     xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+                     xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+                     xmlns:puf="urn:pagero:ExtensionComponent:1.0"
+                     xmlns="urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2">
+
+   <!--
+      Clearance notification - APPROVED
+
+      Output of the Pagero transformation from the internal clearance response to PUF clearance
+      notification. The input was an approved Peppol Message Level Status (MLS) from the UAE
+      corner 5 access point (0242:000773), stored by the Pagero clearance service together with
+      the issuer and the reference to the reported invoice.
+
+      Mapping:
+      - MLS BT-003 (Message Identifier)        -> cbc:ID
+      - MLS BT-004 (Issue Date)                -> cbc:IssueDate
+      - MLS BT-005 (Issue Time)                -> cbc:IssueTime, without the time zone
+      - MLS BT-006 (Sender Party Endpoint ID)  -> cac:SenderParty/cac:PartyName/cbc:Name, the name of
+                                                  the authority that owns the endpoint
+      - MLS BT-010 (Overall response code)     -> cbc:ResponseCode (AP and AB give APPROVED, RE gives
+                                                  REJECTED) and cac:Status/cbc:StatusReasonCode
+      - Issuer of the reported invoice         -> cac:ReceiverParty
+      - Interchange id of the invoice          -> puf:ReferencedDocumentInterchangeID, when sent by the issuer
+      - Invoice number                         -> cac:DocumentReference/cbc:ID
+      - Invoice type code                      -> cac:DocumentReference/cbc:DocumentTypeCode, when the
+                                                  format of the invoice provides it
+
+      Not present:
+      - cac:DocumentReference/cbc:IssueDate. It is optional and is not sent for this clearance
+        authority.
+      - MLS BT-012 (Business document transmission reference). It identifies the transmission of
+        the reported data, not the invoice.
+
+      All party names, identifiers and references are example data.
+   -->
+
+   <cbc:CustomizationID>urn:pagero.com:puf:clearance_notification:1.0</cbc:CustomizationID>
+   <cbc:ProfileID>urn:pagero.com:puf:clearance_notification:1.0</cbc:ProfileID>
+   <cbc:ID>b7e3c9a2-4f1d-4c8e-9a6b-3d2f1e0c5a47</cbc:ID>
+   <cbc:IssueDate>2026-09-21</cbc:IssueDate>
+   <cbc:IssueTime>09:15:30</cbc:IssueTime>
+   <cac:SenderParty>
+      <cac:PartyName>
+         <cbc:Name>UAE Ministry of Finance</cbc:Name>
+      </cac:PartyName>
+   </cac:SenderParty>
+   <cac:ReceiverParty>
+      <cbc:EndpointID schemeID="0235">1234567890</cbc:EndpointID>
+      <cac:PartyLegalEntity>
+         <cbc:RegistrationName>Example Trading LLC</cbc:RegistrationName>
+      </cac:PartyLegalEntity>
+   </cac:ReceiverParty>
+   <cac:DocumentResponse>
+      <cac:Response>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionURI>urn:pagero:ExtensionComponent:1.0:PageroExtension:ResponseExtension</ext:ExtensionURI>
+               <ext:ExtensionContent>
+                  <puf:PageroExtension>
+                     <puf:ResponseExtension>
+                        <puf:ReferencedDocumentInterchangeID>
+                           <cbc:ID>123456789</cbc:ID>
+                        </puf:ReferencedDocumentInterchangeID>
+                     </puf:ResponseExtension>
+                  </puf:PageroExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:ResponseCode>APPROVED</cbc:ResponseCode>
+         <cac:Status>
+            <cbc:StatusReasonCode>AP</cbc:StatusReasonCode>
+         </cac:Status>
+      </cac:Response>
+      <cac:DocumentReference>
+         <cbc:ID>INV-2026-0001</cbc:ID>
+         <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
+      </cac:DocumentReference>
+   </cac:DocumentResponse>
+</ApplicationResponse>

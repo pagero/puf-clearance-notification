@@ -3,7 +3,8 @@
 
 |`cbc:IssueTime`
 |**The time at which the transaction instance was issued.** +
-_Format must be "HH:mm:ss"._
+_Format must be "HH:mm:ss"._ +
+_The element is optional. Whether it is sent depends on the clearance authority._
 |===
 
 *Example* +

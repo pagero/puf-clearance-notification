@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApplicationResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+                     xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+                     xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+                     xmlns:puf="urn:pagero:ExtensionComponent:1.0"
+                     xmlns="urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2">
+
+   <!--
+      Clearance notification - REJECTED
+
+      Output of the Pagero transformation from the internal clearance response to PUF clearance
+      notification. The input was a rejected Peppol Message Level Status (MLS) from the UAE
+      corner 5 access point (0242:000773), stored by the Pagero clearance service together with
+      the issuer and the reference to the reported invoice.
+
+      Mapping:
+      - MLS BT-003 (Message Identifier)              -> cbc:ID
+      - MLS BT-004 (Issue Date)                      -> cbc:IssueDate
+      - MLS BT-005 (Issue Time)                      -> cbc:IssueTime, without the time zone
+      - MLS BT-006 (Sender Party Endpoint ID)        -> cac:SenderParty/cac:PartyName/cbc:Name, the name of
+                                                        the authority that owns the endpoint
+      - MLS BT-010 (Overall response code)           -> cbc:ResponseCode (AP and AB give APPROVED, RE gives
+                                                        REJECTED) and the first cac:Status/cbc:StatusReasonCode
+      - MLS BT-011 (Overall response description)    -> the first cac:Status/cbc:StatusReason
+      - MLS BG-001 (List of issues per location)     -> one further cac:Status per location. cbc:StatusReason
+                                                        holds the location (BT-013), the description (BT-014)
+                                                        and the classification (BT-015) on separate lines
+      - Issuer of the reported invoice               -> cac:ReceiverParty
+      - Interchange id of the invoice                -> puf:ReferencedDocumentInterchangeID, when sent by the issuer
+      - Invoice number                               -> cac:DocumentReference/cbc:ID
+      - Invoice type code                            -> cac:DocumentReference/cbc:DocumentTypeCode, when the
+                                                        format of the invoice provides it
+
+      Not present:
+      - cac:DocumentReference/cbc:IssueDate. It is optional and is not sent for this clearance
+        authority.
+      - MLS BT-012 (Business document transmission reference). It identifies the transmission of
+        the reported data, not the invoice.
+
+      The rejection means that the reported Tax Data Document failed validation at corner 5. The
+      issue descriptions are rule messages from the UAE Tax Data Document schematron version 1.0.4
+      (ibr-tdd-27 and ibr-tdd-40).
+
+      All party names, identifiers and references are example data.
+   -->
+
+   <cbc:CustomizationID>urn:pagero.com:puf:clearance_notification:1.0</cbc:CustomizationID>
+   <cbc:ProfileID>urn:pagero.com:puf:clearance_notification:1.0</cbc:ProfileID>
+   <cbc:ID>c4a8e2f6-1b3d-4e5f-8a9b-0c1d2e3f4a5b</cbc:ID>
+   <cbc:IssueDate>2026-09-22</cbc:IssueDate>
+   <cbc:IssueTime>10:02:11</cbc:IssueTime>
+   <cac:SenderParty>
+      <cac:PartyName>
+         <cbc:Name>UAE Ministry of Finance</cbc:Name>
+      </cac:PartyName>
+   </cac:SenderParty>
+   <cac:ReceiverParty>
+      <cbc:EndpointID schemeID="0235">1234567890</cbc:EndpointID>
+      <cac:PartyLegalEntity>
+         <cbc:RegistrationName>Example Trading LLC</cbc:RegistrationName>
+      </cac:PartyLegalEntity>
+   </cac:ReceiverParty>
+   <cac:DocumentResponse>
+      <cac:Response>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionURI>urn:pagero:ExtensionComponent:1.0:PageroExtension:ResponseExtension</ext:ExtensionURI>
+               <ext:ExtensionContent>
+                  <puf:PageroExtension>
+                     <puf:ResponseExtension>
+                        <puf:ReferencedDocumentInterchangeID>
+                           <cbc:ID>123456790</cbc:ID>
+                        </puf:ReferencedDocumentInterchangeID>
+                     </puf:ResponseExtension>
+                  </puf:PageroExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:ResponseCode>REJECTED</cbc:ResponseCode>
+         <cac:Status>
+            <cbc:StatusReasonCode>RE</cbc:StatusReasonCode>
+            <cbc:StatusReason>The document was rejected because it failed validation</cbc:StatusReason>
+         </cac:Status>
+         <cac:Status>
+            <cbc:StatusReason>LineID: /pxs:TaxData/pxs:ReportedTransaction/pxs:ReportedDocument
+[ibr-tdd-27] The UUID (btae-07) MUST be present
+Reason code: BV</cbc:StatusReason>
+         </cac:Status>
+         <cac:Status>
+            <cbc:StatusReason>LineID: /pxs:TaxData/pxs:ReportedTransaction/pxs:ReportedDocument/cac:AccountingSupplierParty
+[ibr-tdd-40] The SELLER (ibg-04) PARTY DETAILS element (cac:AccountingSupplierParty/cac:Party) MUST be present
+Reason code: BV</cbc:StatusReason>
+         </cac:Status>
+      </cac:Response>
+      <cac:DocumentReference>
+         <cbc:ID>INV-2026-0002</cbc:ID>
+         <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
+      </cac:DocumentReference>
+   </cac:DocumentResponse>
+</ApplicationResponse>

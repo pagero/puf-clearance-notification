@@ -17,7 +17,8 @@ A code defining a clarification given for the clearance notification status.
 
 |`cac:Status/cbc:StatusReason`
 |**Status reason text** +
-The description of the clarification given for the notification status.
+The description of the clarification given for the notification status. +
+_The `cac:Status` element may be repeated when the clearance authority reports several issues, and `cbc:StatusReason` may span several lines._
 
 |===
 

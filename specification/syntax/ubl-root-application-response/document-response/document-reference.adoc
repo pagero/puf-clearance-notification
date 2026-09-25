@@ -11,12 +11,14 @@ _The element may be sent empty, see <<_aggregated_tax_reports>>._
 |`cbc:IssueDate`
 |**Issue date** +
 The date on which the referenced document was issued. +
-_Format must be "YYYY-MM-DD"._
+_Format must be "YYYY-MM-DD"._ +
+_Only sent when the issue date of the referenced document is available, which depends on the clearance authority._
 
 |`cbc:DocumentTypeCode`
 |**Document type code** +
 Type code of the referenced document (e.g. 380 = Invoice, 381 = Credit note etc.).
-For valid values see code list https://pagero.github.io/puf-code-lists/#_puf_019_documentreferencedoctypecode[PUF-019-DOCUMENTREFERENCEDOCTYPECODE^]. +
+For valid values see code list link:++https://pagero.github.io/puf-code-lists/#_puf_019_documentreferencedoctypecode++[PUF-019-DOCUMENTREFERENCEDOCTYPECODE^]. +
+_Only sent when the type of the referenced document is known._ +
 _The element is not used for aggregated tax reports, see <<_aggregated_tax_reports>>._
 
 |===

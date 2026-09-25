@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="generator" content="Asciidoctor 2.0.26">
 <meta name="author" content="Copyright &copy; 2023, Pagero Group">
 <meta name="copyright" content="Pagero Group">
 <title>PUF Clearance Notification 1.0</title>
@@ -1095,6 +1095,7 @@ A unique identifier of the clearance notification.</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>cbc:IssueDate</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Issue date of clearance notification</strong><br>
+The date of the response from the clearance authority. When the response has no date, the date on which the clearance notification was created.<br>
 <em>Format must be "YYYY-MM-DD".</em></p></td>
 </tr>
 </tbody>
@@ -1130,7 +1131,8 @@ A unique identifier of the clearance notification.</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>cbc:IssueTime</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>The time at which the transaction instance was issued.</strong><br>
-<em>Format must be "HH:mm:ss".</em></p></td>
+<em>Format must be "HH:mm:ss".</em><br>
+<em>The element is optional. Whether it is sent depends on the clearance authority.</em></p></td>
 </tr>
 </tbody>
 </table>
@@ -1279,9 +1281,9 @@ The name of the party receiving the response.</p></td>
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;ApplicationResponse&gt;</span>
   <span class="comment">&lt;!-- Code omitted for clarity --&gt;</span>
   <span class="tag">&lt;cac:ReceiverParty&gt;</span>
-      <span class="tag">&lt;cbc:EndpointID</span> <span class="attribute-name">schemeID</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">0088</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>7310000000000<span class="tag">&lt;/EndpointID&gt;</span>
+      <span class="tag">&lt;cbc:EndpointID</span> <span class="attribute-name">schemeID</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">0088</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>7310000000000<span class="tag">&lt;/cbc:EndpointID&gt;</span>
       <span class="tag">&lt;cac:PartyLegalEntity&gt;</span>
-        <span class="tag">&lt;cbc:RegistrationName&gt;</span>Receiver party name<span class="tag">&lt;/cbc:Name&gt;</span>
+        <span class="tag">&lt;cbc:RegistrationName&gt;</span>Receiver party name<span class="tag">&lt;/cbc:RegistrationName&gt;</span>
       <span class="tag">&lt;/cac:PartyLegalEntity&gt;</span>
   <span class="tag">&lt;/cac:ReceiverParty&gt;</span>
   <span class="comment">&lt;!-- Code omitted for clarity --&gt;</span>
@@ -1326,7 +1328,8 @@ A code defining a clarification given for the clearance notification status.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>cac:Status/cbc:StatusReason</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status reason text</strong><br>
-The description of the clarification given for the notification status.</p></td>
+The description of the clarification given for the notification status.<br>
+<em>The <code>cac:Status</code> element may be repeated when the clearance authority reports several issues, and <code>cbc:StatusReason</code> may span several lines.</em></p></td>
 </tr>
 </tbody>
 </table>
@@ -1407,14 +1410,16 @@ In a tax data reporting process this is the tax report identifier assigned by th
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>cbc:IssueDate</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Issue date</strong><br>
 The date on which the referenced document was issued.<br>
-<em>Format must be "YYYY-MM-DD".</em></p></td>
+<em>Format must be "YYYY-MM-DD".</em><br>
+<em>Only sent when the issue date of the referenced document is available, which depends on the clearance authority.</em></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>cbc:DocumentTypeCode</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Document type code</strong><br>
 Type code of the referenced document (e.g. 380 = Invoice, 381 = Credit note etc.).
-For valid values see code list <a href="https://pagero.github.io/puf-code-lists/#<em>puf_019_documentreferencedoctypecode" target="_blank" rel="noopener">PUF-019-DOCUMENTREFERENCEDOCTYPECODE</a>.<br>
-_The element is not used for aggregated tax reports, see <a href="#_aggregated_tax_reports">Aggregated tax reports</a>.</em></p></td>
+For valid values see code list <a href="https://pagero.github.io/puf-code-lists/#_puf_019_documentreferencedoctypecode" target="_blank" rel="noopener">PUF-019-DOCUMENTREFERENCEDOCTYPECODE</a>.<br>
+<em>Only sent when the type of the referenced document is known.</em><br>
+<em>The element is not used for aggregated tax reports, see <a href="#_aggregated_tax_reports">Aggregated tax reports</a>.</em></p></td>
 </tr>
 </tbody>
 </table>
@@ -1528,7 +1533,9 @@ _The element is not used for aggregated tax reports, see <a href="#_aggregated_t
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>puf:RestrictedInformation/puf:Key</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Key</strong><br>
-Key defining the type of value.</p></td>
+Key defining the type of value.<br>
+Restricted information values on document level in PUF Billing documents sent to Pagero, with keys prefixed by "returnInResponse_", may be returned with the same key and value.<br>
+<em>Other keys depend on the clearance authority, see the country specific example files in <a href="#_examples">Examples</a>. <code>puf:RestrictedInformation</code> is only sent when there are values to return.</em></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>puf:RestrictedInformation/puf:Value</code></p></td>
@@ -1651,8 +1658,9 @@ The attached document embedded as binary object (Base64).</p></td>
               <span class="tag">&lt;/puf:PageroExtension&gt;</span>
           <span class="tag">&lt;/ext:ExtensionContent&gt;</span>
         <span class="tag">&lt;/ext:UBLExtension&gt;</span>
-      <span class="tag">&lt;ext:UBLExtensions&gt;</span>
+      <span class="tag">&lt;/ext:UBLExtensions&gt;</span>
     <span class="tag">&lt;/cac:Response&gt;</span>
+  <span class="tag">&lt;/cac:DocumentResponse&gt;</span>
   <span class="comment">&lt;!-- Code omitted for clarity --&gt;</span>
 <span class="tag">&lt;/ApplicationResponse&gt;</span></code></pre>
 </div>
