@@ -19,7 +19,8 @@
         - BT-005 (Issue Time)                   -> cbc:IssueTime
         - BT-006/BT-007 (Sender Endpoint)      -> cac:SenderParty
         - BT-008/BT-009 (Receiver Endpoint)     -> cac:ReceiverParty
-        - BT-010 (Overall response code)        -> cbc:ResponseCode (mapped to PUF codes)
+        - BT-010 (Overall response code)        -> cbc:ResponseCode (mapped to PUF codes) and the
+                                                   cbc:StatusReasonCode of cac:Status (as returned)
     -->
 
     <!-- CustomizationID. Specification identification -->
@@ -45,9 +46,9 @@
     </cac:SenderParty>
 
     <!-- cac:ReceiverParty. The taxpayer who submitted the invoice.
-         MLS BT-008 (Receiver Party Endpoint ID) and BT-009 (Scheme ID). -->
+         MLS BT-008 (Receiver Party Endpoint ID) and BT-009 (Scheme ID). 0235 = UAE TIN. -->
     <cac:ReceiverParty>
-        <cbc:EndpointID schemeID="AE:TIN">1234567890</cbc:EndpointID>
+        <cbc:EndpointID schemeID="0235">1234567890</cbc:EndpointID>
         <cac:PartyLegalEntity>
             <cbc:RegistrationName>Emirates Trading Company LLC</cbc:RegistrationName>
         </cac:PartyLegalEntity>
@@ -79,9 +80,17 @@
                  MLS "AP" (Accepted) is mapped to PUF "APPROVED".
                  Possible PUF clearance response codes:
                     APPROVED = Approved by Clearance Authority
+                    APPROVED_WITH_WARNINGS = Approved by Clearance Authority with warnings
                     REJECTED = Rejected by Clearance Authority
+                    WITHDRAWN_SUCCESS = Withdrawal accepted by Clearance Authority
+                    WITHDRAWN_FAILURE = Withdrawal not accepted by Clearance Authority
             -->
             <cbc:ResponseCode>APPROVED</cbc:ResponseCode>
+
+            <!-- The response code returned by the authority. Corresponds to MLS BT-010 (AP = accepted). -->
+            <cac:Status>
+                <cbc:StatusReasonCode>AP</cbc:StatusReasonCode>
+            </cac:Status>
 
         </cac:Response>
 
