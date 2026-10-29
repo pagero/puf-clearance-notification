@@ -23,7 +23,8 @@
         - BT-005 (Issue Time)                    -> cbc:IssueTime
         - BT-006/BT-007 (Sender Endpoint)        -> cac:SenderParty
         - BT-008/BT-009 (Receiver Endpoint)      -> cac:ReceiverParty
-        - BT-010 (Overall response code)         -> cbc:ResponseCode (MLS "AP" -> PUF "APPROVED")
+        - BT-010 (Overall response code)         -> cbc:ResponseCode (MLS "AP" -> PUF "APPROVED") and the
+                                                    cbc:StatusReasonCode of cac:Status (as returned)
 
         All identifiers, names and references are example/anonymised data.
     -->
@@ -52,9 +53,9 @@
 
     <!-- cac:ReceiverParty. The taxpayer who submitted the invoice (the supplier).
          MLS BT-008 (Receiver Party Endpoint ID) and BT-009 (Scheme ID).
-         Peppol EAS 0158 (Slovak ICO). -->
+         Peppol EAS 0245 = Slovak tax identifier (DIC). -->
     <cac:ReceiverParty>
-        <cbc:EndpointID schemeID="0158">36045612</cbc:EndpointID>
+        <cbc:EndpointID schemeID="0245">1234567890</cbc:EndpointID>
         <cac:PartyLegalEntity>
             <cbc:RegistrationName>Dunaj Dodavatel s.r.o.</cbc:RegistrationName>
         </cac:PartyLegalEntity>
@@ -86,9 +87,17 @@
                  MLS "AP" (Accepted) is mapped to PUF "APPROVED".
                  Possible PUF clearance response codes:
                     APPROVED = Approved by Clearance Authority
+                    APPROVED_WITH_WARNINGS = Approved by Clearance Authority with warnings
                     REJECTED = Rejected by Clearance Authority
+                    WITHDRAWN_SUCCESS = Withdrawal accepted by Clearance Authority
+                    WITHDRAWN_FAILURE = Withdrawal not accepted by Clearance Authority
             -->
             <cbc:ResponseCode>APPROVED</cbc:ResponseCode>
+
+            <!-- The response code returned by the authority. Corresponds to MLS BT-010 (AP = accepted). -->
+            <cac:Status>
+                <cbc:StatusReasonCode>AP</cbc:StatusReasonCode>
+            </cac:Status>
 
         </cac:Response>
 

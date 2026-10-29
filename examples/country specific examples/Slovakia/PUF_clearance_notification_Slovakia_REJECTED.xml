@@ -23,14 +23,13 @@
         - BT-005 (Issue Time)                    -> cbc:IssueTime
         - BT-006/BT-007 (Sender Endpoint)        -> cac:SenderParty
         - BT-008/BT-009 (Receiver Endpoint)      -> cac:ReceiverParty
-        - BT-010 (Overall response code)         -> cbc:ResponseCode (MLS "RE" -> PUF "REJECTED")
-        - BT-011 (Overall response description)  -> cbc:Description (when present)
-        - BG-001/BG-002 (Line issues)            -> cac:Status elements
-
-        MLS issue mapping:
-        - BT-013 (Issue location)                -> Included in cbc:StatusReason text
-        - BT-014 (Issue description)             -> cbc:StatusReason
-        - BT-015 (Issue classification)          -> cbc:StatusReasonCode
+        - BT-010 (Overall response code)         -> cbc:ResponseCode (MLS "RE" -> PUF "REJECTED") and the
+                                                    cbc:StatusReasonCode of the first cac:Status (RE)
+        - BT-011 (Overall response description)  -> cbc:StatusReason of the first cac:Status
+        - BG-001/BG-002 (Issues)                 -> one further cac:Status per issue, where
+                                                    cbc:StatusReason holds the issue location (BT-013),
+                                                    description (BT-014) and classification (BT-015)
+                                                    on separate lines
 
         MLS issue classification codes (BT-015), standard Peppol values:
         - BV = Business rule violation, fatal
@@ -65,9 +64,9 @@
 
     <!-- cac:ReceiverParty. The taxpayer who submitted the invoice (the supplier).
          MLS BT-008 (Receiver Party Endpoint ID) and BT-009 (Scheme ID).
-         Peppol EAS 0158 (Slovak ICO). -->
+         Peppol EAS 0245 = Slovak tax identifier (DIC). -->
     <cac:ReceiverParty>
-        <cbc:EndpointID schemeID="0158">36045612</cbc:EndpointID>
+        <cbc:EndpointID schemeID="0245">1234567890</cbc:EndpointID>
         <cac:PartyLegalEntity>
             <cbc:RegistrationName>Dunaj Dodavatel s.r.o.</cbc:RegistrationName>
         </cac:PartyLegalEntity>
@@ -99,29 +98,35 @@
                  MLS "RE" (Rejected) is mapped to PUF "REJECTED".
                  Possible PUF clearance response codes:
                     APPROVED = Approved by Clearance Authority
+                    APPROVED_WITH_WARNINGS = Approved by Clearance Authority with warnings
                     REJECTED = Rejected by Clearance Authority
+                    WITHDRAWN_SUCCESS = Withdrawal accepted by Clearance Authority
+                    WITHDRAWN_FAILURE = Withdrawal not accepted by Clearance Authority
             -->
             <cbc:ResponseCode>REJECTED</cbc:ResponseCode>
 
-            <!-- MLS BT-011 (Overall response description), when present. -->
-            <cbc:Description>The submitted invoice was rejected due to validation errors.</cbc:Description>
+            <!-- The response code returned by the authority (MLS BT-010, RE = rejected) and the
+                 overall response description (MLS BT-011), when present. -->
+            <cac:Status>
+                <cbc:StatusReasonCode>RE</cbc:StatusReasonCode>
+                <cbc:StatusReason>The submitted invoice was rejected due to validation errors.</cbc:StatusReason>
+            </cac:Status>
 
-            <!-- Issues from MLS BG-001/BG-002 mapped to cac:Status elements.
-                 Each cac:Status represents one issue from the MLS LineResponse structure:
-                 - cbc:StatusReasonCode = MLS BT-015 (Issue classification)
-                 - cbc:StatusReason     = MLS BT-014 (Issue description), prefixed with BT-013 (Issue location) when available
-            -->
+            <!-- Issues from MLS BG-001/BG-002, one cac:Status per issue. cbc:StatusReason holds the issue
+                 location (BT-013), description (BT-014) and classification (BT-015) on separate lines. -->
 
             <!-- Issue 1: Business rule violation, fatal -->
             <cac:Status>
-                <cbc:StatusReasonCode>BV</cbc:StatusReasonCode>
-                <cbc:StatusReason>[/Invoice/cac:TaxTotal/cac:TaxSubtotal] VAT category tax amount does not match the taxable amount multiplied by the VAT rate.</cbc:StatusReason>
+                <cbc:StatusReason>LineID: /Invoice/cac:TaxTotal/cac:TaxSubtotal
+VAT category tax amount does not match the taxable amount multiplied by the VAT rate.
+Reason code: BV</cbc:StatusReason>
             </cac:Status>
 
             <!-- Issue 2: Syntax violation -->
             <cac:Status>
-                <cbc:StatusReasonCode>SV</cbc:StatusReasonCode>
-                <cbc:StatusReason>[/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID] Seller VAT identifier (IC DPH) is missing or has an invalid format (expected SK followed by 10 digits).</cbc:StatusReason>
+                <cbc:StatusReason>LineID: /Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID
+Seller VAT identifier (IC DPH) is missing or has an invalid format (expected SK followed by 10 digits).
+Reason code: SV</cbc:StatusReason>
             </cac:Status>
 
         </cac:Response>
